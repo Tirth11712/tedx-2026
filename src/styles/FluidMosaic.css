@@ -1,0 +1,95 @@
+.fluidMosaicWrapper {
+  width: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.fluidMosaicStage {
+  width: 100%;
+  max-width: 1400px;
+  height: 640px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #0a0a0a;
+  border-radius: 20px;
+  display: flex;
+}
+
+.fluidMosaicPanel {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #151515;
+  border-radius: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.fluidMosaicBranch {
+  display: flex;
+  gap: 10px;
+  flex-basis: 0;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+}
+
+.fluidMosaicTile {
+  position: relative;
+  flex-basis: 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #1e1e1e;
+  cursor: pointer;
+}
+
+.fluidMosaicImg {
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 991px) {
+  .fluidMosaicStage {
+    height: 520px;
+  }
+}
+
+@media (max-width: 767px) {
+  .fluidMosaicWrapper {
+    padding: 0 12px;
+  }
+
+  .fluidMosaicStage {
+    height: 460px;
+    padding: 6px;
+    border-radius: 16px;
+  }
+
+  .fluidMosaicPanel {
+    gap: 6px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+
+  .fluidMosaicBranch {
+    gap: 6px;
+  }
+
+  .fluidMosaicTile {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 479px) {
+  .fluidMosaicStage {
+    height: 400px;
+  }
+}
