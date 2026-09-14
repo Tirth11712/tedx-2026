@@ -504,9 +504,9 @@ export default function TeamPage() {
         {/* Hero Section thing */}
         <div className="wrap team-hero-in">
           <h1>
-            <span className="team-hline">Meet the </span>
-            <span className="team-hline team-hline--stroke">team behind</span>
-            <span className="team-hline team-hline--red">this event.</span>
+            <span className="team-hline">Meet the team </span>
+            {/*<span className="team-hline">team behind</span>*/}
+            <span className="team-hline team-hline--red">behind this event.</span>
           </h1>
         </div>
 
