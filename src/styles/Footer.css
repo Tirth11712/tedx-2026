@@ -1,107 +1,328 @@
-/* Footer.css */
+/* =========================================================
+   SITE-WIDE FOOTER REDESIGN
+   Editorial theme matching txs-des1.html / Speaker / Team / About
+   Host Grotesk typography, premium layout, clean responsive design
+   ========================================================= */
 
-.footer-grid {
+.site-footer {
+  --ft-ink: #171717;
+  --ft-ink-2: #202020;
+  --ft-bone: #EFEAE0;
+  --ft-bone-dim: #9B9489;
+  --ft-red: #E62B1F;
+  --ft-red-lit: #FF5346;
+  --ft-red-deep: #B3180E;
+  --ft-line: rgba(239, 234, 224, 0.14);
+  --ft-line-strong: rgba(239, 234, 224, 0.28);
+  --ft-ease: cubic-bezier(0.76, 0, 0.24, 1);
+
   width: 100%;
-  background: transparent;
-  color: #fff;
-  padding: 20px 0 0 0;
- font-family: 'Host Grotesk', sans-serif;
-  letter-spacing: 0.5px;
+  background: var(--ft-ink);
+  color: var(--ft-bone);
+  border-top: 1px solid var(--ft-line);
+  font-family: 'Host Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
 }
 
-.footer-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 85%;
-  margin: 0 auto;
-  padding: 0 40px;
+.site-footer * {
+  box-sizing: border-box;
 }
 
-.footer-col1,
-.footer-col2 {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.footer-col1 a,
-.footer-col2 a {
-  color: #fff;
+.site-footer a {
   text-decoration: none;
-  font-size: 16px;
-  transition: color 0.2s;
+  color: inherit;
 }
 
-.footer-col1 a:hover,
-.footer-col2 a:hover {
-  color: #ec2227;
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 56px);
 }
-/* Footer.css */
 
-/* ...your existing styles above... */
+/* ============ GIANT HERO WORDMARK ============ */
+.foot-word-wrap {
+  width: 100%;
+  padding-top: clamp(36px, 6vw, 72px);
+  padding-bottom: clamp(20px, 3vw, 40px);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--ft-line);
+}
 
-.footer-bottom {
-  max-width: 80%;
-  margin: 40px auto 0 auto;
+.foot-wordmark {
+  font-size: clamp(48px, 12.5vw, 170px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
+  text-transform: uppercase;
+  color: var(--ft-bone);
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  user-select: none;
+  transition: transform 0.4s var(--ft-ease);
+}
+
+.foot-wordmark .wm-ted {
+  color: #fff;
+}
+
+.foot-wordmark .wm-x {
+  color: var(--ft-red);
+  margin-right: 0.04em;
+  display: inline-block;
+  transform: translateY(-0.04em);
+}
+
+.foot-wordmark .wm-svit {
+  color: transparent;
+  -webkit-text-stroke: clamp(1px, 0.15vw, 2.5px) rgba(239, 234, 224, 0.4);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  transition: -webkit-text-stroke-color 0.3s ease, color 0.3s ease;
+}
+
+.foot-word-wrap:hover .wm-svit {
+  color: rgba(239, 234, 224, 0.1);
+  -webkit-text-stroke-color: var(--ft-bone);
+}
+
+/* ============ EDITORIAL COLUMNS ============ */
+.foot-cols {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+  gap: clamp(30px, 4vw, 64px);
+  padding-top: clamp(40px, 6vw, 64px);
+  padding-bottom: clamp(40px, 6vw, 64px);
+}
+
+.fc {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-}
-.footer-bottom img{
-  width: 100%;
-  height: auto;
 }
 
-/* Desktop row for license + icons */
-.footer-row {
+.fc-head {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap:40%;   /* Adjust gap for spacing between license and icons */
-  width: 100%;
-}
-.license {
-  font-size: 14px;
-  color: #bbb;
-  margin-bottom: 0;   /* Remove margin for alignment in row */
-}
-.social-icons {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 0;   /* Remove margin for alignment in row */
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ft-bone-dim);
+  margin-bottom: 22px;
 }
 
-/* Responsive Styles - Stacked for mobile */
-@media (max-width: 600px) {
-  .social-icons{
-    font-size: 12px;
-  }
-  .footer-nav {
-    margin: 0;
-    flex-direction: column;
-    gap: 30px;
-    align-items: flex-start;
-    /* padding: 0 16px; */
-  }
-  .footer-bottom {
-    /* padding: 0 16px 24px 16px; */
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .footer-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    width: 100%;
-  }
-  .footerImage {
-    margin-top: 1rem;
-    width: 100%;
-  }
-  .footer-col1,
-  .footer-col2 {
-    gap: 12px;
+.fc-head b {
+  color: var(--ft-red);
+}
+
+.fc-brand-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ft-bone-dim);
+  margin-bottom: 20px;
+  max-width: 32ch;
+}
+
+.fc-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--ft-line);
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ft-bone-dim);
+  width: fit-content;
+}
+
+.fc-pill-badge i {
+  width: 6px;
+  height: 6px;
+  background: var(--ft-red);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--ft-red);
+}
+
+/* Links List */
+.fc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fc li {
+  font-size: 14.5px;
+}
+
+.fc li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ft-bone);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.fc li a:hover {
+  color: var(--ft-red-lit);
+  transform: translateX(4px);
+}
+
+.fc li a sup {
+  font-size: 9.5px;
+  color: var(--ft-red);
+  letter-spacing: 0.05em;
+}
+
+.fc li a .arrow {
+  opacity: 0.4;
+  font-size: 12px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.fc li a:hover .arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* Venue & contact copy */
+.fc-copy {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ft-bone-dim);
+  margin-bottom: 8px;
+}
+
+.fc-copy strong {
+  color: var(--ft-bone);
+  font-weight: 600;
+  display: block;
+}
+
+/* Social icons strip */
+.fc-social-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.social-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--ft-line);
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.25s, background 0.25s, transform 0.25s;
+}
+
+.social-pill:hover {
+  border-color: var(--ft-red);
+  background: rgba(230, 43, 31, 0.12);
+  transform: translateY(-3px);
+}
+
+.social-pill img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.social-pill:hover img {
+  opacity: 1;
+}
+
+/* ============ BOTTOM BAR ============ */
+.foot-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--ft-line);
+  padding: 24px 0 32px 0;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--ft-bone-dim);
+}
+
+.foot-bar-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.foot-license {
+  font-size: 11px;
+  color: var(--ft-bone-dim);
+  opacity: 0.75;
+  max-width: 60ch;
+}
+
+.to-top-btn {
+  background: transparent;
+  border: 1px solid var(--ft-line);
+  color: var(--ft-bone);
+  padding: 8px 16px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.to-top-btn:hover {
+  background: var(--ft-red);
+  border-color: var(--ft-red);
+  color: #fff;
+}
+
+/* ============ RESPONSIVE BREAKPOINTS ============ */
+@media (max-width: 1024px) {
+  .foot-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 32px;
   }
 }
+
+@media (max-width: 600px) {
+  .foot-cols {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .foot-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .to-top-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+  }
+}
+

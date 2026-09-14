@@ -1,102 +1,39 @@
-"use client";
-import { usePathname } from "next/navigation"; 
+import Link from "next/link";
 import GlassSurface from "../../Reactbits/GlassSurface/GlassSurface";
 import MobileNavPopup from "./MobilePopup";
 import "../styles/page.css";
 
-// export default function Navbar() {
-//   const pathname = usePathname();
-
-//   const handleNavClick = (href: string) => {
-//     if (pathname === href) {
-//       window.location.href = href; // 🔥 Full page reload
-//     } else {
-//       window.location.href = href; // navigate with reload
-//     }
-//   };
-
-//   return (
-//     <>
-//       <div className="NavBar" style={{ padding: "1rem" }}>
-//         <MobileNavPopup />
-//         <GlassSurface
-//           width="100%"
-//           height="85%"
-//           borderRadius={24}
-//           className="glassNavbarContainer"
-//         >
-//           <div className="navbar-content">
-//             <div className="logo">
-//               <img src="/logoNav.png" alt="" />
-//             </div>
-
-//             {/* Desktop Navigation */}
-//             <div className="nav-links desktop-nav">
-//               <button onClick={() => handleNavClick("/")}>Home</button>
-//               <button onClick={() => handleNavClick("/team")}>Team</button>
-//               <button onClick={() => handleNavClick("/sponsors")}>Sponsors</button>
-//               <button onClick={() => handleNavClick("/about")}>About</button>
-//             </div>
-
-//             {/* Desktop Get Tickets Button */}
-//             <div className="get-tickets desktop-nav">
-//               <button
-//                 className="tickets-button"
-//                 onClick={() => handleNavClick("/ticketForm")}
-//               >
-//                 Get Tickets
-//               </button>
-//             </div>
-//           </div>
-//         </GlassSurface>
-//       </div>
-//     </>
-//   );
-// }
 export default function Navbar() {
-  const pathname = usePathname();
-
-  const handleNavClick = (href: string) => {
-    if (pathname === href) {
-      window.location.href = href;
-    } else {
-      window.location.href = href;
-    }
-  };
-
   return (
     <>
-      <div className="NavBar" style={{ padding: "1rem",position:"fixed"}}>
+      <div className="NavBar">
         <MobileNavPopup />
         <GlassSurface
           width="100%"
-          height="85%"
+          height="100%"
           borderRadius={24}
           className="glassNavbarContainer"
         >
-           <div className="navbar-content">
+          <div className="navbar-content">
             <div className="logo">
-              <img src="/logoNav.png" alt="NavLogo" onClick={()=>{
-              handleNavClick("/")
-              }} style={{cursor:"pointer"}}/>
+              <Link href="/">
+                <img src="/logoNav.png" alt="NavLogo" style={{ cursor: "pointer" }} />
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
             <div className="nav-links desktop-nav">
-              <a onClick={() => handleNavClick("/")}>Home</a>
-              <a onClick={() => handleNavClick("/team")}>Team</a>
-              <a onClick={() => handleNavClick("/speaker")}>Speakers</a>
-              <a onClick={() => handleNavClick("/about")}>About</a>
+              <Link href="/">Home</Link>
+              <Link href="/team">Team</Link>
+              <Link href="/speaker">Speakers</Link>
+              <Link href="/about">About</Link>
             </div>
 
             {/* Desktop Get Tickets Button */}
             <div className="get-tickets desktop-nav">
-              <button
-                className="tickets-button"
-                onClick={() => handleNavClick("/ticketForm")}
-              >
-                Get Tickets
-              </button>
+              <Link href="/ticketForm">
+                <button className="tickets-button">Get Tickets</button>
+              </Link>
             </div>
           </div>
         </GlassSurface>

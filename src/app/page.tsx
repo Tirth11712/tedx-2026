@@ -1,6 +1,4 @@
 'use client'
-// test
-import ScrollReveal from "../../Reactbits/ScrollReveal/ScrollReveal";
 import Image from "next/image";
 import "../styles/page.css";
 import FAQs from "@/components/FAQs";
