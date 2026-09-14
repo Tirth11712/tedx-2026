@@ -18,8 +18,8 @@
 
   min-height: 100vh;
   width: 100%;
-  background: var(--paper, #E7E1D2);
-  color: var(--ink, #171717);
+  background: var(--ink, #171717);
+  color: var(--bone, #EFEAE0);
   padding-top: clamp(100px, 12vh, 140px);
   overflow-x: hidden;
   position: relative;
@@ -30,6 +30,53 @@
   margin-inline: auto;
   padding-inline: clamp(20px, 4vw, 56px);
   padding-bottom: clamp(60px, 8vw, 100px);
+}
+
+/* ============ FIXED BACKGROUND LAYERS (matches /team hero) ============ */
+.speaker-bg-ripple {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.speaker-bg-ripple-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.35;
+}
+
+.speaker-bg-lines {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: clamp(20px, 4vw, 56px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.speaker-bg-lines i {
+  width: 1px;
+  background: rgba(239, 234, 224, 0.05);
+}
+
+.speaker-bg-lines i:nth-child(4) {
+  background: rgba(239, 234, 224, 0.09);
+}
+
+.speaker-content {
+  position: relative;
+  z-index: 2;
+}
+
+.speaker-page-root .site-footer {
+  position: relative;
+  z-index: 2;
 }
 
 /* ============ SECTION HEADER ============ */
@@ -46,25 +93,25 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: var(--ink, #171717);
+  color: var(--bone, #EFEAE0);
 }
 
 .kicker b {
-  color: var(--red-deep, #B3180E);
+  color: var(--red-lit, #FF5346);
   margin-right: 6px;
 }
 
 .sec-line {
   flex: 1;
   height: 1px;
-  background: var(--line-ink, rgba(23, 23, 23, 0.22));
+  background: var(--line, rgba(239, 234, 224, 0.16));
 }
 
 .sec-note {
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6E6759;
+  color: var(--bone-dim, #9B9489);
   text-align: right;
   white-space: nowrap;
 }
@@ -86,7 +133,7 @@
   line-height: 1;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  color: var(--ink, #171717);
+  color: var(--bone, #EFEAE0);
   margin-bottom: 12px;
 }
 
@@ -97,166 +144,230 @@
 
 .speaker-subtitle {
   font-size: clamp(15px, 1.4vw, 18px);
-  color: #5c5547;
+  color: var(--bone-dim, #9B9489);
   max-width: 60ch;
   line-height: 1.5;
 }
 
-/* ============ SPEAKER LIST ============ */
-.sp-list {
+/* ============ SPEAKER GRID ============ */
+.sp-grid {
   list-style: none;
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid var(--line-ink, rgba(23, 23, 23, 0.22));
-}
-
-.speaker {
-  border-top: 1px solid var(--line-ink, rgba(23, 23, 23, 0.22));
-  transition: background 0.3s ease;
-}
-
-/* ============ SPEAKER ROW BUTTON ============ */
-.speaker-row {
-  position: relative;
   display: grid;
-  grid-template-columns: 60px 1fr auto 48px;
-  align-items: center;
-  gap: clamp(14px, 2vw, 30px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 3vw, 28px);
+}
+
+@media (min-width: 961px) {
+  .sp-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 2vw, 32px);
+  }
+}
+
+/* ============ SPEAKER CARD (default: name + image only) ============ */
+.sp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   width: 100%;
-  padding: clamp(18px, 2.4vw, 30px) clamp(8px, 1.2vw, 20px);
-  text-align: left;
-  isolation: isolate;
   background: transparent;
   border: 0;
+  padding: 0;
+  margin: 0;
+  text-align: left;
   cursor: pointer;
-  color: var(--ink, #171717);
+  color: inherit;
   font-family: inherit;
-  transition: color 0.3s ease;
 }
 
-/* Red sweep background effect */
-.speaker-row::before {
-  content: "";
+.sp-card:focus-visible {
+  outline: 2px solid var(--red, #E62B1F);
+  outline-offset: 6px;
+}
+
+.sp-card-photo-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--ink-2, #202020);
+  border: 1px solid var(--line, rgba(239, 234, 224, 0.16));
+  transition: border-color 0.3s ease;
+}
+
+.sp-card:hover .sp-card-photo-frame,
+.sp-card:focus-visible .sp-card-photo-frame {
+  border-color: var(--red, #E62B1F);
+}
+
+.sp-card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.sp-card:hover .sp-card-photo,
+.sp-card:focus-visible .sp-card-photo {
+  transform: scale(1.05);
+}
+
+/* Tap/click affordance icon */
+.sp-card-plus {
   position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--red, #E62B1F);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.45s var(--ease, cubic-bezier(0.76, 0, 0.24, 1));
-}
-
-.speaker-row:hover::before,
-.speaker.open .speaker-row::before {
-  transform: scaleX(1);
-}
-
-/* Speaker Index Number */
-.s-no {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--red-deep, #B3180E);
-  transition: color 0.3s ease;
-  letter-spacing: 0.08em;
-}
-
-/* Speaker Name */
-.s-name {
-  font-size: clamp(24px, 3.4vw, 44px);
-  font-weight: 700;
-  line-height: 1.1;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  transition: color 0.3s ease;
-}
-
-/* Info: Role + Tag */
-.s-info {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  justify-self: end;
-}
-
-.s-role {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #6E6759;
-  transition: color 0.3s ease;
-  text-align: right;
-  max-width: 32ch;
-}
-
-.s-tag {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  padding: 6px 12px;
-  border: 1px solid currentColor;
-  color: #4E4839;
-  transition: color 0.3s ease, border-color 0.3s ease;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-/* Plus Icon (+) */
-.s-plus {
-  width: 40px;
-  height: 40px;
+  right: 10px;
+  bottom: 10px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1;
-  color: var(--ink, #171717);
-  transition: transform 0.4s var(--ease, cubic-bezier(0.76, 0, 0.24, 1)), color 0.3s ease;
+  color: #ffffff;
+  background: var(--red, #E62B1F);
+  border-radius: 50%;
   user-select: none;
+  transition: transform 0.4s var(--ease, cubic-bezier(0.76, 0, 0.24, 1)), background 0.3s ease;
 }
 
-/* Hover & Open States for Row */
-.speaker-row:hover .s-no,
-.speaker.open .s-no {
-  color: rgba(255, 255, 255, 0.85);
+.sp-card:hover .sp-card-plus,
+.sp-card:focus-visible .sp-card-plus {
+  transform: rotate(90deg);
+  background: var(--red-deep, #B3180E);
 }
 
-.speaker-row:hover .s-name,
-.speaker.open .s-name {
-  color: #ffffff;
+.sp-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.speaker-row:hover .s-role,
-.speaker.open .s-role {
-  color: rgba(255, 255, 255, 0.9);
+.sp-card-no {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red-deep, #B3180E);
+  letter-spacing: 0.08em;
 }
 
-.speaker-row:hover .s-tag,
-.speaker.open .s-tag {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.8);
+.sp-card-name {
+  font-size: clamp(16px, 2.4vw, 22px);
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--bone, #EFEAE0);
 }
 
-.speaker-row:hover .s-plus,
-.speaker.open .s-plus {
-  color: #ffffff;
+/* ============ SPEAKER DETAIL MODAL ============ */
+.sp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(23, 23, 23, 0.82);
+  backdrop-filter: blur(4px);
+  animation: sp-fade-in 0.25s ease;
 }
 
-/* + Rotates to ✕ when open */
-.speaker.open .s-plus {
-  transform: rotate(45deg);
+@keyframes sp-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* ============ EXPANDABLE SPEAKER PANEL ============ */
-.speaker-panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s var(--ease, cubic-bezier(0.76, 0, 0.24, 1));
+@keyframes sp-scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-.speaker.open .speaker-panel {
-  max-height: 1400px;
+.sp-modal {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  max-height: 95vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 2px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  animation: sp-scale-in 0.3s var(--ease, cubic-bezier(0.76, 0, 0.24, 1));
+}
+
+.sp-modal-close,
+.sp-modal-nav {
+  position: absolute;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(23, 23, 23, 0.65);
+  border: 1px solid rgba(239, 234, 224, 0.2);
+  color: var(--bone, #EFEAE0);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.sp-modal-close:hover,
+.sp-modal-nav:hover {
+  background: var(--red, #E62B1F);
+  border-color: var(--red, #E62B1F);
+}
+
+.sp-modal-close {
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.sp-modal-close:hover {
+  transform: rotate(90deg);
+}
+
+.sp-modal-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.sp-modal-prev {
+  left: 16px;
+}
+
+.sp-modal-next {
+  right: 16px;
+}
+
+.panel-topline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.p-tag-pill {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid var(--bone-dim, #9B9489);
+  color: var(--bone-dim, #9B9489);
+  white-space: nowrap;
 }
 
 .panel-in {
@@ -292,10 +403,6 @@
   object-position: center top;
   display: block;
   transition: transform 0.5s ease;
-}
-
-.speaker.open .speaker-photo {
-  transform: scale(1.02);
 }
 
 /* Speaker Content / Details in Panel */
@@ -394,13 +501,13 @@
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6E6759;
+  color: var(--bone-dim, #9B9489);
   max-width: 70ch;
   line-height: 1.6;
 }
 
 .sp-foot i {
-  color: var(--red-deep, #B3180E);
+  color: var(--red-lit, #FF5346);
   font-style: normal;
   margin-right: 8px;
   font-weight: bold;
@@ -410,44 +517,6 @@
 @media (max-width: 960px) {
   .speaker-page-root {
     padding-top: clamp(80px, 10vh, 110px);
-  }
-
-  .speaker-row {
-    grid-template-columns: 44px 1fr 40px;
-    gap: 12px;
-    padding: 18px 8px;
-  }
-
-  .s-no {
-    grid-row: 1;
-    grid-column: 1;
-  }
-
-  .s-name {
-    grid-row: 1;
-    grid-column: 2;
-    font-size: clamp(20px, 4.5vw, 30px);
-    word-break: break-word;
-  }
-
-  .s-plus {
-    grid-row: 1;
-    grid-column: 3;
-    justify-self: end;
-  }
-
-  .s-info {
-    grid-row: 2;
-    grid-column: 2 / -1;
-    justify-self: start;
-    flex-wrap: wrap;
-    gap: 8px 12px;
-    margin-top: 4px;
-  }
-
-  .s-role {
-    text-align: left;
-    font-size: 11px;
   }
 
   .panel-in {
@@ -460,6 +529,22 @@
     max-width: 300px;
     margin: 0 auto;
   }
+
+  .sp-modal-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sp-modal-overlay {
+    padding: 8px;
+  }
+
+  .sp-modal {
+    max-height: 96vh;
+  }
 }
 
 @media (max-width: 540px) {
@@ -471,24 +556,22 @@
     font-size: clamp(28px, 8vw, 42px);
   }
 
-  .speaker-row {
-    grid-template-columns: 32px 1fr 32px;
-    gap: 8px;
-    padding: 14px 4px;
+  .sp-grid {
+    gap: 12px;
   }
 
-  .s-no {
-    font-size: 12px;
+  .sp-card-name {
+    font-size: 15px;
   }
 
-  .s-name {
-    font-size: 18px;
+  .sp-card-no {
+    font-size: 11px;
   }
 
-  .s-plus {
-    width: 32px;
-    height: 32px;
-    font-size: 20px;
+  .sp-card-plus {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
   }
 
   .p-talk {
@@ -508,5 +591,27 @@
   .p-meta {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .sp-modal-close {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .sp-modal-nav {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+
+  .sp-modal-prev {
+    left: 8px;
+  }
+
+  .sp-modal-next {
+    right: 8px;
   }
 }

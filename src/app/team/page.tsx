@@ -548,7 +548,7 @@ export default function TeamPage() {
                       key={member.idx}
                     >
                       <div className="m-top">
-                        <span className="m-idx">{member.idx}</span>
+                        <span className="m-idx"></span>
 
                         {member.photo && (
                           <div
@@ -560,7 +560,7 @@ export default function TeamPage() {
                         )}
 
                         <span className="m-mono" aria-hidden="true">
-                          {member.mono}
+                          
                         </span>
 
                         <svg
