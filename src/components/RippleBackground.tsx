@@ -156,9 +156,15 @@ void main(){
 
 interface RippleBackgroundProps {
   className?: string
+  /** When false, disables click/cursor ripples, idle auto-ripples, and the
+   * on-load wake-in blooms — leaving just the continuously rotating spiral. */
+  interactive?: boolean
 }
 
-export default function RippleBackground({ className }: RippleBackgroundProps) {
+export default function RippleBackground({
+  className,
+  interactive = true,
+}: RippleBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -322,7 +328,7 @@ export default function RippleBackground({ className }: RippleBackgroundProps) {
     // Ambient auto-ripple when idle, so the vortex keeps breathing
     let idleInterval: ReturnType<typeof setInterval> | null = null
     const startIdleRipples = () => {
-      if (prefersReducedMotion || idleInterval) return
+      if (!interactive || prefersReducedMotion || idleInterval) return
       idleInterval = setInterval(() => {
         if (now() - lastAct > 8 && document.visibilityState === 'visible') {
           lastAct = now() - 2
@@ -389,9 +395,11 @@ export default function RippleBackground({ className }: RippleBackgroundProps) {
     // content in the DOM, so clicks/moves over real content would never
     // reach a canvas-only listener. window listeners catch them regardless
     // of what was actually clicked.
-    window.addEventListener('pointerdown', handlePointerDown)
-    window.addEventListener('pointermove', handlePointerMove)
-    document.documentElement.addEventListener('mouseleave', handlePointerLeave)
+    if (interactive) {
+      window.addEventListener('pointerdown', handlePointerDown)
+      window.addEventListener('pointermove', handlePointerMove)
+      document.documentElement.addEventListener('mouseleave', handlePointerLeave)
+    }
 
     const intersectionObserver = new IntersectionObserver(
       ([entry]) => {
@@ -409,9 +417,11 @@ export default function RippleBackground({ className }: RippleBackgroundProps) {
     document.addEventListener('visibilitychange', handleVisibilityChange)
 
     startLoop()
-    // Two soft blooms as the vortex wakes in
-    setTimeout(() => addRipple(0, 0, 0.9), 900)
-    setTimeout(() => addRipple(0, 0, 0.55), 1550)
+    if (interactive) {
+      // Two soft blooms as the vortex wakes in
+      setTimeout(() => addRipple(0, 0, 0.9), 900)
+      setTimeout(() => addRipple(0, 0, 0.55), 1550)
+    }
 
     const handleContextLost = (e: Event) => {
       e.preventDefault()
@@ -429,7 +439,7 @@ export default function RippleBackground({ className }: RippleBackgroundProps) {
       canvas.removeEventListener('webglcontextlost', handleContextLost)
       document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
-  }, [])
+  }, [interactive])
 
   return <canvas ref={canvasRef} className={className} />
 }

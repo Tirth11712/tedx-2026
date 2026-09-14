@@ -32,7 +32,7 @@
 }
 
 /* ============ TEAM HERO ============ */
-.team-hero {
+/*.team-hero {
   position: relative;
   min-height: 72vh;
   display: flex;
@@ -41,6 +41,41 @@
   padding-top: clamp(120px, 14vh, 160px);
   padding-bottom: 0;
   overflow: hidden;
+}*/
+.team-hero {
+  position: relative;
+
+  /* Full viewport */
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-top: clamp(90px, 14vh, 160px);
+  padding-bottom: clamp(24px, 4vw, 56px);
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.team-hero-ripple {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.team-hero-ripple-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.35;
 }
 
 .team-hero-lines {
@@ -87,9 +122,16 @@
   }
 }
 
+/*.team-hero-in {
+  position: relative;
+  z-index: 2;
+}*/
+
 .team-hero-in {
   position: relative;
   z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .team-eyebrow {
@@ -178,7 +220,7 @@
   color: var(--red-lit);
 }
 
-@media (max-width: 700px) {
+/*@media (max-width: 700px) {
   .team-hero-meta {
     grid-template-columns: 1fr 1fr;
   }
@@ -194,6 +236,23 @@
   }
   .team-hero-x {
     display: none;
+  }
+}*/
+
+@media (max-width: 900px) {
+  .team-hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: clamp(90px, 12vh, 130px);
+    padding-bottom: 20px;
+  }
+
+  .core-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .m-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
@@ -659,22 +718,6 @@
 }
 
 /* ============ RESPONSIVE BREAKPOINTS ============ */
-@media (max-width: 900px) {
-  .team-hero {
-    min-height: auto;
-    padding-top: clamp(90px, 12vh, 130px);
-    padding-bottom: 20px;
-  }
-
-  .core-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .m-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-}
-
 @media (max-width: 768px) {
   .team-deptbar {
     top: 56px;
@@ -689,7 +732,7 @@
 
 @media (max-width: 640px) {
   .team-hero h1 {
-    font-size: clamp(36px, 9vw, 64px);
+    font-size: clamp(45px, 11.25vw, 80px);
   }
 
   .team-hero-meta {

@@ -21,7 +21,7 @@ export default function Home() {
     '/Bento/Col5Row1.png',
   ];
   return (
-  
+
     <>
       <div className="globalRippleBg" aria-hidden="true">
         <RippleBackground className="globalRippleCanvas" />
@@ -31,21 +31,21 @@ export default function Home() {
       <div className="mainpage">
       {/* ------------------------Navbar-------------------------- */}
       {/* <Navbar /> */}
-      
+
       {/* ------------------------Hero Section-------------------------- */}
       <div className="heroSection">
         <div className="logoTextButtonContainer">
           <div className="logoText">
             <Image
-              src="/samatvamTextLogo.svg"
-              width={500}
-              height={300}
+              src="/text2.svg"
+              width={1000}
+              height={600}
               alt="Picture of the author"
             />
           </div>
-          <p className="heroTagline">One idea, dropped in the right room, reaches everywhere.</p>
+          <p className="heroTagline">One Thing Leads to Another</p>
           <div className="addressText">
-            <p>September 12, 2025</p>
+            <p>September 10, 2026</p>
             <p>Architecture Auditorium SVIT Campus, Vasad</p>
           </div>
           <div className="getTicketBtn">
@@ -65,16 +65,16 @@ export default function Home() {
           blurStrength={10}
         > */}
         <p className="DiscriptionPara">
-          Samatvam means equanimity - a balanced state of mind that remains calm,
+          {/*Samatvam means equanimity - a balanced state of mind that remains calm,
           undisturbed, and impartial in success and failure, pleasure and pain,
-          gain and loss.
+          gain and loss.*/}
         </p>
           {/* Samatvam means equanimity a balanced state of mind that remains calm,
           undisturbed, and impartial in success and failure, pleasure and pain,
           gain and loss. */}
         {/* </ScrollReveal> */}
 
-      
+
       </div>
       <FluidMosaic images={images}/>
       {/* ------------------------Frequently Asked Questions-------------------------- */}

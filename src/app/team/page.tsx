@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import RippleBackground from "@/components/RippleBackground";
 import "./team.css";
 
 interface TeamMember {
@@ -32,11 +33,11 @@ const departments: Department[] = [
     num: "01",
     title: "Core Team",
     theme: "paper",
-    kickerNote: "The four who sign the paperwork",
-    headingText: "Run the",
-    headingEm: "show.",
-    desc: "Licenses, budgets, speaker curation, three a.m. venue checks — the core team carries the event on its shoulders and somehow still smiles on show day.",
-    countText: "4 — the ones holding the ✕",
+    kickerNote: "",
+    headingText: "CORE",
+    headingEm: "TEAM",
+    desc: "",
+    countText: "",
     members: [
       {
         idx: "C·01",
@@ -73,11 +74,11 @@ const departments: Department[] = [
     num: "02",
     title: "Website Team",
     theme: "dark",
-    kickerNote: "Pixels & push requests",
-    headingText: "Ship the",
-    headingEm: "site.",
-    desc: "The people responsible for the page you're reading right now — the layouts, the bugs, the \"it works on my machine\" debates.",
-    countText: "5 members",
+    kickerNote: "",
+    headingText: "WEBSITE",
+    headingEm: "TEAM.",
+    desc: "",
+    countText: "",
     members: [
       {
         idx: "W·01",
@@ -121,11 +122,11 @@ const departments: Department[] = [
     num: "03",
     title: "Admin & Logistics",
     theme: "paper",
-    kickerNote: "Spreadsheets & sanity",
-    headingText: "Hold the",
-    headingEm: "line.",
-    desc: "Registration desks, vendor calls, seating charts, the twenty things nobody notices until they go wrong — this crew makes sure they never do.",
-    countText: "5 members",
+    kickerNote: "",
+    headingText: "ADMIN & LOGISTICS",
+    headingEm: "TEAM.",
+    desc: "",
+    countText: "",
     members: [
       {
         idx: "A·01",
@@ -169,10 +170,10 @@ const departments: Department[] = [
     num: "04",
     title: "Graphic Design",
     theme: "dark",
-    kickerNote: "Kerning police",
-    headingText: "Draw the",
-    headingEm: "eye.",
-    desc: "Posters, badges, stage backdrops, the Instagram grid you double-tap — every pixel of VOL.05's visual identity passes through these hands.",
+    kickerNote: "",
+    headingText: "GRAPHIC DESIGN",
+    headingEm: "TEAM",
+    desc: "",
     countText: "3 members",
     members: [
       {
@@ -204,8 +205,8 @@ const departments: Department[] = [
     title: "Videography",
     theme: "paper",
     kickerNote: "On the day, behind the lens",
-    headingText: "Frame the",
-    headingEm: "moment.",
+    headingText: "VIDEOGRAPHY",
+    headingEm: "TEAM",
     desc: "Multiple angles, zero second takes — the videography crew captures every talk so the ideas outlive the auditorium.",
     countText: "2 members",
     members: [
@@ -231,8 +232,8 @@ const departments: Department[] = [
     title: "Video Editing",
     theme: "dark",
     kickerNote: "Timeline surgeons",
-    headingText: "Cut the",
-    headingEm: "noise.",
+    headingText: "VIDEO EDITING",
+    headingEm: "TEAM",
     desc: "Hours of footage in, eighteen clean minutes out — the editing team turns raw talks into the videos that live on after the curtain.",
     countText: "3 members",
     members: [
@@ -265,8 +266,8 @@ const departments: Department[] = [
     title: "Social Media",
     theme: "paper",
     kickerNote: "The loudspeakers",
-    headingText: "Spread the",
-    headingEm: "word.",
+    headingText: "SOCIAL MEDIA",
+    headingEm: "TEAM",
     desc: "Teasers, countdowns, speaker reveals, live coverage — if you heard about VOL.05 before buying a ticket, this is who to thank.",
     countText: "3 members",
     members: [
@@ -299,8 +300,8 @@ const departments: Department[] = [
     title: "Anchoring",
     theme: "dark",
     kickerNote: "The voices of the day",
-    headingText: "Hold the",
-    headingEm: "room.",
+    headingText: "ANCHORING",
+    headingEm: "TEAM",
     desc: "Between every talk, someone has to keep five hundred people leaning forward — these three keep the energy up and the transitions seamless.",
     countText: "3 members",
     members: [
@@ -333,8 +334,8 @@ const departments: Department[] = [
     title: "Dance",
     theme: "paper",
     kickerNote: "The opening statement",
-    headingText: "Set the",
-    headingEm: "stage.",
+    headingText: "DANCE",
+    headingEm: "TEAM",
     desc: "The performance that opens VOL.05 — rehearsed in corridors, perfected in mirror rooms, delivered under the lights.",
     countText: "3 members",
     members: [
@@ -367,8 +368,8 @@ const departments: Department[] = [
     title: "Music",
     theme: "dark",
     kickerNote: "The biggest crew",
-    headingText: "Play the",
-    headingEm: "score.",
+    headingText: "MUSIC",
+    headingEm: "TEAM",
     desc: "Ten people strong — the music team scores the day, from walk-on stings to the closing act that sends everyone home humming.",
     countText: "10 members",
     members: [
@@ -488,6 +489,10 @@ export default function TeamPage() {
     <div className="team-page-root">
       {/* ============ HERO ============ */}
       <section className="team-hero" aria-label="Team introduction">
+        <div className="team-hero-ripple" aria-hidden="true">
+          <RippleBackground className="team-hero-ripple-canvas" interactive={false} />
+        </div>
+
         <div className="team-hero-lines" aria-hidden="true">
           <i></i>
           <i></i>
@@ -496,82 +501,17 @@ export default function TeamPage() {
           <i></i>
         </div>
 
-        {/* Decorative spinning ✕ */}
-        <div className="team-hero-x" aria-hidden="true">
-          <svg viewBox="0 0 100 100">
-            <g fill="none" stroke="#E62B1F" strokeWidth="1.6">
-              <rect
-                x="45"
-                y="-14"
-                width="10"
-                height="128"
-                transform="rotate(45 50 50)"
-              />
-              <rect
-                x="45"
-                y="-14"
-                width="10"
-                height="128"
-                transform="rotate(-45 50 50)"
-              />
-            </g>
-          </svg>
-        </div>
-
+        {/* Hero Section thing */}
         <div className="wrap team-hero-in">
-          <p className="team-eyebrow">
-            <b>✕</b> The people behind this event — VOL.05 · Unfiltered
-          </p>
           <h1>
-            <span className="team-hline">The crew</span>
-            <span className="team-hline team-hline--stroke">behind</span>
-            <span className="team-hline team-hline--red">the ✕</span>
+            <span className="team-hline">Meet the </span>
+            <span className="team-hline team-hline--stroke">team behind</span>
+            <span className="team-hline team-hline--red">this event.</span>
           </h1>
-          <p className="team-hero-sub">
-            Forty-three students. Ten departments. Zero filters. This is the team
-            that turns a campus auditorium into a stage for ideas worth spreading —
-            one all-nighter, render queue and group-chat at a time.
-          </p>
         </div>
 
-        <div className="wrap" style={{ paddingInline: 0 }}>
-          <div className="team-hero-meta">
-            <div className="team-hm">
-              <span className="team-hm-label">Members</span>
-              <span className="team-hm-value">43</span>
-            </div>
-            <div className="team-hm">
-              <span className="team-hm-label">Departments</span>
-              <span className="team-hm-value">10</span>
-            </div>
-            <div className="team-hm">
-              <span className="team-hm-label">Edition</span>
-              <span className="team-hm-value">Vol.05</span>
-            </div>
-            <div className="team-hm team-hm--vol">
-              <span className="team-hm-label">Status</span>
-              <span className="team-hm-value">All in ✕</span>
-            </div>
-          </div>
-        </div>
       </section>
 
-      {/* ============ STICKY DEPTBAR ============ */}
-      <nav className="team-deptbar" aria-label="Department index">
-        <div className="wrap team-deptbar-in">
-          {departments.map((dept) => (
-            <button
-              key={dept.id}
-              type="button"
-              className={activeDept === dept.id ? "active" : ""}
-              onClick={() => scrollToDept(dept.id)}
-            >
-              <sup>{dept.num}</sup>
-              {dept.title}
-            </button>
-          ))}
-        </div>
-      </nav>
 
       {/* ============ DEPARTMENTS ============ */}
       <main id="main">
@@ -589,17 +529,17 @@ export default function TeamPage() {
                 <div className="dept-head">
                   <span className="dept-kicker">
                     <b>{dept.num}</b>
-                    {dept.title}
+                    {/*{dept.title}*/}
                   </span>
                   <span className="dept-line"></span>
-                  <span className="dept-note">{dept.kickerNote}</span>
+                  {/*<span className="dept-note">{dept.kickerNote}</span>*/}
                 </div>
 
                 <h2>
                   {dept.headingText} <em>{dept.headingEm}</em>
                 </h2>
-                <p className="dept-desc">{dept.desc}</p>
-                <p className="dept-count">{dept.countText}</p>
+                {/*<p className="dept-desc">{dept.desc}</p>*/}
+                <p className="dept-count"></p>
 
                 <div className={isCore ? "core-grid" : "m-grid"}>
                   {dept.members.map((member) => (
