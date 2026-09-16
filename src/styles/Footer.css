@@ -1,26 +1,8 @@
-/* =========================================================
-   SITE-WIDE FOOTER REDESIGN
-   Editorial theme matching txs-des1.html / Speaker / Team / About
-   Host Grotesk typography, premium layout, clean responsive design
-   ========================================================= */
-
 .site-footer {
-  --ft-ink: #171717;
-  --ft-ink-2: #202020;
-  --ft-bone: #EFEAE0;
-  --ft-bone-dim: #9B9489;
-  --ft-red: #E62B1F;
-  --ft-red-lit: #FF5346;
-  --ft-red-deep: #B3180E;
-  --ft-line: rgba(239, 234, 224, 0.14);
-  --ft-line-strong: rgba(239, 234, 224, 0.28);
-  --ft-ease: cubic-bezier(0.76, 0, 0.24, 1);
-
   width: 100%;
-  background: var(--ft-ink);
-  color: var(--ft-bone);
-  border-top: 1px solid var(--ft-line);
-  font-family: 'Host Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--ink);
+  color: var(--bone);
+  border-top: 1px solid var(--line);
   position: relative;
   overflow: hidden;
   margin-top: auto;
@@ -42,6 +24,7 @@
 }
 
 /* ============ GIANT HERO WORDMARK ============ */
+
 .foot-word-wrap {
   width: 100%;
   padding-top: clamp(36px, 6vw, 72px);
@@ -50,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid var(--ft-line);
+  border-bottom: 1px solid var(--line);
 }
 
 .foot-wordmark {
@@ -59,12 +42,12 @@
   letter-spacing: -0.04em;
   line-height: 0.88;
   text-transform: uppercase;
-  color: var(--ft-bone);
+  color: var(--bone);
   margin: 0;
   display: flex;
   align-items: baseline;
   user-select: none;
-  transition: transform 0.4s var(--ft-ease);
+  transition: transform 0.4s var(--ease);
 }
 
 .foot-wordmark .wm-ted {
@@ -72,7 +55,7 @@
 }
 
 .foot-wordmark .wm-x {
-  color: var(--ft-red);
+  color: var(--red);
   margin-right: 0.04em;
   display: inline-block;
   transform: translateY(-0.04em);
@@ -88,10 +71,11 @@
 
 .foot-word-wrap:hover .wm-svit {
   color: rgba(239, 234, 224, 0.1);
-  -webkit-text-stroke-color: var(--ft-bone);
+  -webkit-text-stroke-color: var(--bone);
 }
 
 /* ============ EDITORIAL COLUMNS ============ */
+
 .foot-cols {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
@@ -113,18 +97,18 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ft-bone-dim);
+  color: var(--bone-dim);
   margin-bottom: 22px;
 }
 
 .fc-head b {
-  color: var(--ft-red);
+  color: var(--red);
 }
 
 .fc-brand-desc {
   font-size: 14px;
   line-height: 1.65;
-  color: var(--ft-bone-dim);
+  color: var(--bone-dim);
   margin-bottom: 20px;
   max-width: 32ch;
 }
@@ -134,25 +118,26 @@
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  border: 1px solid var(--ft-line);
+  border: 1px solid var(--line);
   border-radius: 999px;
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ft-bone-dim);
+  color: var(--bone-dim);
   width: fit-content;
 }
 
 .fc-pill-badge i {
   width: 6px;
   height: 6px;
-  background: var(--ft-red);
+  background: var(--red);
   border-radius: 50%;
   display: inline-block;
-  box-shadow: 0 0 8px var(--ft-red);
+  box-shadow: 0 0 8px var(--red);
 }
 
 /* Links List */
+
 .fc ul {
   list-style: none;
   padding: 0;
@@ -170,18 +155,18 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--ft-bone);
+  color: var(--bone);
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .fc li a:hover {
-  color: var(--ft-red-lit);
+  color: var(--red-lit);
   transform: translateX(4px);
 }
 
 .fc li a sup {
   font-size: 9.5px;
-  color: var(--ft-red);
+  color: var(--red);
   letter-spacing: 0.05em;
 }
 
@@ -197,20 +182,22 @@
 }
 
 /* Venue & contact copy */
+
 .fc-copy {
   font-size: 13.5px;
   line-height: 1.65;
-  color: var(--ft-bone-dim);
+  color: var(--bone-dim);
   margin-bottom: 8px;
 }
 
 .fc-copy strong {
-  color: var(--ft-bone);
+  color: var(--bone);
   font-weight: 600;
   display: block;
 }
 
 /* Social icons strip */
+
 .fc-social-row {
   display: flex;
   gap: 12px;
@@ -224,13 +211,13 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--ft-line);
+  border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
   transition: border-color 0.25s, background 0.25s, transform 0.25s;
 }
 
 .social-pill:hover {
-  border-color: var(--ft-red);
+  border-color: var(--red);
   background: rgba(230, 43, 31, 0.12);
   transform: translateY(-3px);
 }
@@ -249,17 +236,18 @@
 }
 
 /* ============ BOTTOM BAR ============ */
+
 .foot-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 16px 28px;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--ft-line);
+  border-top: 1px solid var(--line);
   padding: 24px 0 32px 0;
   font-size: 11.5px;
   letter-spacing: 0.08em;
-  color: var(--ft-bone-dim);
+  color: var(--bone-dim);
 }
 
 .foot-bar-left {
@@ -270,15 +258,15 @@
 
 .foot-license {
   font-size: 11px;
-  color: var(--ft-bone-dim);
+  color: var(--bone-dim);
   opacity: 0.75;
   max-width: 60ch;
 }
 
 .to-top-btn {
   background: transparent;
-  border: 1px solid var(--ft-line);
-  color: var(--ft-bone);
+  border: 1px solid var(--line);
+  color: var(--bone);
   padding: 8px 16px;
   font-size: 11px;
   letter-spacing: 0.14em;
@@ -292,12 +280,13 @@
 }
 
 .to-top-btn:hover {
-  background: var(--ft-red);
-  border-color: var(--ft-red);
+  background: var(--red);
+  border-color: var(--red);
   color: #fff;
 }
 
 /* ============ RESPONSIVE BREAKPOINTS ============ */
+
 @media (max-width: 1024px) {
   .foot-cols {
     grid-template-columns: 1fr 1fr;
@@ -325,4 +314,3 @@
     padding: 10px 16px;
   }
 }
-

@@ -1,42 +1,36 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Host_Grotesk } from "next/font/google";
+import Navbar from "@/components/layout/Navbar";
+import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import "./globals.css";
-import SmoothScrollProvider from '@/components/SmoothScrollProvider';
-import Navbar from "@/components/Navbar";
-import { Host_Grotesk } from 'next/font/google';
-// import MobileNavPopup from "@/components/MobilePopup";
-
-
-
-const inter = Inter({ subsets: ["latin"] });
 
 const hostGrotesk = Host_Grotesk({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-host-grotesk',
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-host-grotesk",
 });
+
 export const metadata: Metadata = {
-  title: "TEDxSVIT",
-  description: "Official Website for TEDxSVIT",
+  title: {
+    default: "TEDxSVIT",
+    template: "%s — TEDxSVIT",
+  },
+  description: "Official website for TEDxSVIT, an independently organized TEDx event at SVIT, Vasad.",
   icons: {
-    icon: "/favicon.ico", // Place favicon.ico in your public/ folder
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png", // Optional: for iOS
+    icon: "/favicon.ico",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  themeColor: "#000000",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={hostGrotesk.variable}>
-      
-      <body className={inter.className}>
+      <body>
         <SmoothScrollProvider>
-          {/* <MobileNavPopup /> */}
-          <Navbar/>
+          <Navbar />
           {children}
         </SmoothScrollProvider>
       </body>

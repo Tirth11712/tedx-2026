@@ -1,75 +1,29 @@
-/* =========================================================
-   ABOUT PAGE STYLING (matching Speaker & Team page themes)
-   Typography uses existing website fonts (Host Grotesk / sans-serif)
-   ========================================================= */
-
 .about-page-root {
-  --ink: #171717;
-  --ink-2: #202020;
-  --bone: #EFEAE0;
-  --bone-mid: #C7C0B4;
-  --bone-dim: #9B9489;
-  --paper: #E7E1D2;
-  --red: #E62B1F;
-  --red-deep: #B3180E;
-  --red-lit: #FF5346;
-  --line: rgba(239, 234, 224, 0.16);
-  --line-ink: rgba(23, 23, 23, 0.22);
-  --pad: clamp(20px, 4vw, 56px);
-  --ease: cubic-bezier(0.76, 0, 0.24, 1);
-
   background: var(--ink);
   color: var(--bone);
-  font-family: 'Host Grotesk', sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
   min-height: 100vh;
 }
 
 .about-page-root .wrap {
-  max-width: none;
   margin-inline: auto;
   padding-inline: var(--pad);
   text-align: center;
 }
 
-/* ============ BACKGROUND IMAGE ============ */
-.about-bg-ripple {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.about-bg-ripple-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  opacity: 0.2;
-}
-
-/* ============ SECTIONS ============ */
-.about-sec {
-  position: relative;
-  z-index: 2;
-  padding-block: clamp(64px, 9vw, 120px);
-}
-
-.about-sec--dark {
-  color: var(--bone);
-  --fg: var(--bone);
-  --fg-dim: var(--bone-mid);
-  --acc: var(--red-lit);
-  --lc: var(--line);
-}
-
+.about-page-root main,
 .about-page-root .site-footer {
   position: relative;
   z-index: 2;
+}
+
+.about-sec {
+  padding-block: clamp(64px, 9vw, 120px);
+}
+
+.about-sec:first-child {
+  padding-top: clamp(110px, 9vw, 120px);
 }
 
 .about-sec + .about-sec {
@@ -77,7 +31,6 @@
   padding-top: clamp(48px, 7vw, 100px);
 }
 
-/* ============ TITLES & BODY TEXT ============ */
 .about-title {
   font-size: clamp(48px, 8vw, 120px);
   font-weight: 800;
@@ -88,7 +41,7 @@
 }
 
 .about-body {
-  color: var(--fg-dim);
+  color: var(--bone-mid);
   font-size: clamp(17px, 1.5vw, 21px);
   line-height: 1.75;
   max-width: 68ch;

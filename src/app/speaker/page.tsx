@@ -1,127 +1,57 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Footer from "@/components/Footer";
-import "./speaker.css";
+import Footer from "@/components/layout/Footer";
+import PageBackdrop from "@/components/ui/PageBackdrop";
+import { speakers } from "@/data/speakers";
+import { useEscapeKey, useScrollLock } from "@/hooks/overlay";
+import "@/styles/speaker.css";
 
-interface SpeakerItem {
-  id: string;
-  name: string;
-  role: string;
-  tag: string;
-  talk: string;
-  img: string;
-  desc: string;
-  meta: { label: string; val: string }[];
-}
-
-const speakers: SpeakerItem[] = [
-  {
-    id: "01",
-    name: "Bhargsetu Sharma",
-    role: "Animal Rescuer & Social Activist",
-    tag: "Social Welfare",
-    talk: "Voices For The Voiceless",
-    img: "/Speakers/Bhargsetu.png",
-    desc: "Has rescued more than 5000 stray animals and birds. Awarded the Raksha Mantri Padak from the Defence Ministry in 2019 and the Governor's Medal at just age 20. Invited to MTV Roadies 2019 as a Real Hero.",
-    meta: [
-      { label: "Recognition", val: "Raksha Mantri Padak (2019)" },
-      { label: "Milestone", val: "Governor's Medal at Age 20" },
-      { label: "Impact", val: "5,000+ Stray Animal Rescues" },
-    ],
-  },
-  {
-    id: "02",
-    name: "Nisha Kumari",
-    role: "Mountaineer & Cyclist",
-    tag: "Exploration",
-    talk: "Pedaling Through Continents & Peaks",
-    img: "/Speakers/Nisha.jpg",
-    desc: "First woman from Vadodara to summit Mount Everest. Nisha Kumari rode approximately 16,697 km, crossing 15 countries over the course of 210 days. Cycled through India, Nepal, China, Kyrgyzstan, Uzbekistan, Kazakhstan, Russia, Latvia, Lithuania, Poland, Czech Republic, Germany, Netherlands, Belgium and France. Along the way, Nisha and her coach planted more than 1050 trees emphasising their message on environmental conservation and sustainability.",
-    meta: [
-      { label: "Everest Record", val: "1st Woman from Vadodara on Summit" },
-      { label: "Expedition", val: "16,697 km across 15 Countries" },
-      { label: "Sustainability", val: "1,050+ Native Trees Planted" },
-    ],
-  },
-  {
-    id: "03",
-    name: "Tarun Barot",
-    role: "Former Dy. SP & Social Worker",
-    tag: "Public Service",
-    talk: "Duty, Law & Humanitarian Care",
-    img: "/Speakers/Tarun.png",
-    desc: "Known as “encounter specialist”, Tarun is Gujarat Police's most talked-about officers for his high-profile cases that made national headlines. He played a major role in the arrest and encounter of underworld don and Dawood Ibrahim associate Abdul Latif - who later inspired Shah Rukh Khan’s movie Raees (2017). He led various high-profile encounters to bring down underworld gangs. Post retirement, Barot is deeply involved in social work and welfare of people. In COVID, he organised meals for 5000+ needy people for 75 consecutive days and distributed 1000+ ration kits. He has facilitated marriages of 10+ underprivileged women.",
-    meta: [
-      { label: "Service", val: "Dy. SP, Gujarat Police (Retd.)" },
-      { label: "COVID Relief", val: "5,000+ Daily Meals for 75 Days" },
-      { label: "Initiatives", val: "Community Welfare & Support" },
-    ],
-  },
-  {
-    id: "04",
-    name: "Vikrem Rajgopal",
-    role: "Corporate Leader & Public Speaker",
-    tag: "Leadership",
-    talk: "The Power of Purposeful Speech",
-    img: "/Speakers/Vikrem.jpg",
-    desc: "17+ years of experience in Oil and Gas sector with industry giant L&T. 5x Winner of International Speech Contest at Club level in Toastmasters International, Winner of Evaluation Speech Contest at Division Level. Awarded Rising Star Award in Toastmasters (2021). Currently serving as President of Vadodara Toastmasters. Pursues his passion in public speaking despite a busy corporate life. Known for his impactful speeches with thought-provoking ideas.",
-    meta: [
-      { label: "Corporate", val: "17+ Years Leadership at L&T" },
-      { label: "Toastmasters", val: "President, Vadodara Toastmasters" },
-      { label: "Accolades", val: "Rising Star Award & 5x Contest Winner" },
-    ],
-  },
-];
+const SWIPE_THRESHOLD = 50;
 
 export default function SpeakerPage() {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
   const cardRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
+  const lastOpenedIdx = useRef<number | null>(null);
   const touchStartX = useRef<number | null>(null);
 
-  const openSpeaker = (idx: number) => setActiveIdx(idx);
+  const isOpen = activeIdx !== null;
 
-  const closeModal = () => {
-    setActiveIdx((prev) => {
-      if (prev !== null) cardRefs.current[prev]?.focus();
-      return null;
-    });
-  };
+  const closeModal = useCallback(() => {
+    setActiveIdx(null);
+    if (lastOpenedIdx.current !== null) cardRefs.current[lastOpenedIdx.current]?.focus();
+  }, []);
 
-  const showPrev = () =>
-    setActiveIdx((prev) => (prev === null ? prev : (prev - 1 + speakers.length) % speakers.length));
+  const showPrev = useCallback(
+    () => setActiveIdx((prev) => (prev === null ? prev : (prev - 1 + speakers.length) % speakers.length)),
+    []
+  );
 
-  const showNext = () =>
-    setActiveIdx((prev) => (prev === null ? prev : (prev + 1) % speakers.length));
+  const showNext = useCallback(
+    () => setActiveIdx((prev) => (prev === null ? prev : (prev + 1) % speakers.length)),
+    []
+  );
 
-  // Lock background scroll while the modal is open
+  useScrollLock(isOpen);
+  useEscapeKey(isOpen, closeModal);
+
   useEffect(() => {
-    if (activeIdx === null) return;
-    const original = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = original;
-    };
-  }, [activeIdx]);
-
-  // Focus the close button whenever a new speaker's modal opens
-  useEffect(() => {
-    if (activeIdx !== null) closeBtnRef.current?.focus();
-  }, [activeIdx]);
-
-  // Keyboard controls: Escape to close, arrows to browse
-  useEffect(() => {
-    if (activeIdx === null) return;
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeModal();
-      else if (e.key === "ArrowLeft") showPrev();
+    if (!isOpen) return;
+    closeBtnRef.current?.focus();
+    const handleArrows = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") showPrev();
       else if (e.key === "ArrowRight") showNext();
     };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [activeIdx]);
+    window.addEventListener("keydown", handleArrows);
+    return () => window.removeEventListener("keydown", handleArrows);
+  }, [isOpen, showPrev, showNext]);
+
+  const openSpeaker = (idx: number) => {
+    lastOpenedIdx.current = idx;
+    setActiveIdx(idx);
+  };
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -130,9 +60,8 @@ export default function SpeakerPage() {
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
     const diff = e.changedTouches[0].clientX - touchStartX.current;
-    const threshold = 50;
-    if (diff > threshold) showPrev();
-    else if (diff < -threshold) showNext();
+    if (diff > SWIPE_THRESHOLD) showPrev();
+    else if (diff < -SWIPE_THRESHOLD) showNext();
     touchStartX.current = null;
   };
 
@@ -140,35 +69,32 @@ export default function SpeakerPage() {
 
   return (
     <div className="speaker-page-root">
-      <div className="speaker-bg-ripple" aria-hidden="true">
-        <img src="/assets/fallback.webp" className="speaker-bg-ripple-canvas" alt="" />
-      </div>
+      <PageBackdrop />
 
       <div className="speaker-bg-lines" aria-hidden="true">
-        <i></i><i></i><i></i><i></i><i></i>
+        <i />
+        <i />
+        <i />
+        <i />
+        <i />
       </div>
 
-      <section className="sec sec--paper speaker-content" id="speakers" aria-labelledby="spTitle">
+      <main className="speaker-content" id="speakers" aria-labelledby="spTitle">
         <div className="wrap">
-          {/* Section Header */}
           <div className="sec-head">
             <span className="kicker">
-              <b></b>Speakers
+              <b />
+              Speakers
             </span>
-            <span className="sec-line"></span>
-            <span className="sec-note"></span>
+            <span className="sec-line" />
           </div>
 
-          {/* Page Heading */}
           <div className="speaker-title-block">
             <h1 id="spTitle">
               Meet the <em>Speakers</em>
             </h1>
-            <p className="speaker-subtitle">
-            </p>
           </div>
 
-          {/* Speakers Grid */}
           <ul className="sp-grid">
             {speakers.map((s, idx) => (
               <li key={s.id}>
@@ -186,10 +112,10 @@ export default function SpeakerPage() {
                     <Image
                       src={s.img}
                       alt=""
-                      width={400}
-                      height={533}
+                      fill
+                      sizes="(min-width: 961px) 25vw, 50vw"
                       className="sp-card-photo"
-                      priority={idx === 0}
+                      priority={idx < 2}
                     />
                     <span className="sp-card-plus" aria-hidden="true">
                       +
@@ -204,16 +130,16 @@ export default function SpeakerPage() {
             ))}
           </ul>
 
-          <p className="sp-foot">
-            <i>✕</i> 
-            <i>✕</i> 
-            <i>✕</i> 
+          <p className="sp-foot" aria-hidden="true">
+            <i>✕</i>
+            <i>✕</i>
+            <i>✕</i>
           </p>
         </div>
-      </section>
+      </main>
 
       {active && (
-        <div className="sp-modal-overlay" onClick={closeModal}>
+        <div className="sp-modal-overlay" onClick={closeModal} data-lenis-prevent>
           <button
             type="button"
             className="sp-modal-close"
@@ -261,26 +187,23 @@ export default function SpeakerPage() {
             onTouchEnd={handleTouchEnd}
           >
             <div className="panel-in">
-              {/* Speaker Photo */}
               <div className="panel-photo-col">
                 <div className="panel-photo-frame">
                   <Image
                     src={active.img}
                     alt={active.name}
-                    width={400}
-                    height={533}
+                    fill
+                    sizes="(max-width: 960px) 300px, 340px"
                     className="speaker-photo"
-                    priority
                   />
                 </div>
               </div>
 
-              {/* Speaker Description and Talk Meta */}
               <div className="panel-content-col">
                 <div className="panel-topline">
                   <span className="p-tag-pill">{active.tag}</span>
                 </div>
-                <h3 className="p-talk">{active.talk}</h3>
+                <h2 className="p-talk">{active.talk}</h2>
 
                 <div className="p-speaker-badge">
                   {active.name} <span>— {active.role}</span>
@@ -289,8 +212,8 @@ export default function SpeakerPage() {
                 <p className="p-desc">{active.desc}</p>
 
                 <div className="p-meta">
-                  {active.meta.map((m, mIdx) => (
-                    <div className="p-meta-item" key={mIdx}>
+                  {active.meta.map((m) => (
+                    <div className="p-meta-item" key={m.label}>
                       <span className="meta-label">{m.label}</span>
                       <b>{m.val}</b>
                     </div>

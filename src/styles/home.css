@@ -1,0 +1,206 @@
+/* ============ FULL-PAGE RIPPLE BACKGROUND ============ */
+.globalRippleBg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.globalRippleVideo,
+.globalRippleCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.globalRippleVideo {
+  object-fit: cover;
+}
+
+/* Hidden until it has a real distorted frame; the plain video underneath is the fallback. */
+.globalRippleCanvas {
+  touch-action: pan-y;
+  opacity: 0;
+}
+
+.globalRippleCanvasReady {
+  opacity: 1;
+}
+
+.globalRippleOverlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.mainpage {
+  width: 100%;
+  overflow-x: clip;
+  position: relative;
+}
+
+/* ============ HERO ============ */
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(90px, 14vh, 130px) 1.25rem clamp(40px, 6vh, 60px);
+}
+
+.logoTextButtonContainer {
+  width: 100%;
+  max-width: 760px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logoText {
+  width: 100%;
+  max-width: clamp(260px, 80vw, 540px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.logoText img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.heroTagline {
+  color: #c7b8b4;
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  max-width: 38ch;
+  margin: 1.25rem auto 0;
+  line-height: 1.55;
+  padding-inline: 0.5rem;
+}
+
+.addressText {
+  margin-top: 1.25rem;
+}
+
+.addressText p {
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  margin: 0.35rem 0;
+  color: #e5e5e5;
+  letter-spacing: 0.02em;
+}
+
+.getTicketBtn {
+  position: relative;
+  margin-top: 2.25rem;
+}
+
+.getTicketBtn a {
+  position: relative;
+  display: inline-block;
+  background-color: var(--red);
+  color: #fff;
+  padding: 0.85rem 2.4rem;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 700;
+  border-radius: 999px;
+  border: 2px solid var(--red);
+  z-index: 1;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.04em;
+}
+
+.getTicketBtn a:hover {
+  background-color: var(--red-deep);
+  border-color: var(--red-deep);
+  transform: scale(1.04);
+  box-shadow: 0 0 40px rgba(230, 43, 31, 0.6);
+}
+
+/* Expanding ring pulses around the CTA on hover */
+.getTicketBtn::before,
+.getTicketBtn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1.5px solid #f6d9d2;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.getTicketBtn:hover::before {
+  opacity: 0.5;
+  transform: scale(1.35);
+}
+
+.getTicketBtn:hover::after {
+  transition-delay: 0.15s;
+  transform: scale(1.7);
+  opacity: 0.25;
+}
+
+/* ============ GALLERY & FAQ ============ */
+.gallerySection {
+  padding-top: clamp(40px, 8vw, 90px);
+}
+
+.FAQContainer {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 60px) clamp(16px, 3vw, 32px);
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 90px 1rem 40px;
+  }
+
+  .getTicketBtn {
+    margin-top: 1.75rem;
+  }
+
+  .getTicketBtn a {
+    padding: 0.75rem 2rem;
+  }
+
+  .gallerySection {
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding-top: 80px;
+  }
+
+  .logoText {
+    max-width: 280px;
+  }
+
+  .heroTagline,
+  .addressText p {
+    font-size: 0.95rem;
+  }
+
+  .getTicketBtn a {
+    font-size: 1.05rem;
+    padding: 0.7rem 1.8rem;
+  }
+}
