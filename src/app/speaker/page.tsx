@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
-import RippleBackground from "@/components/RippleBackground";
 import "./speaker.css";
 
 interface SpeakerItem {
@@ -142,7 +141,7 @@ export default function SpeakerPage() {
   return (
     <div className="speaker-page-root">
       <div className="speaker-bg-ripple" aria-hidden="true">
-        <RippleBackground className="speaker-bg-ripple-canvas" interactive={false} />
+        <img src="/assets/fallback.png" className="speaker-bg-ripple-canvas" alt="" />
       </div>
 
       <div className="speaker-bg-lines" aria-hidden="true">

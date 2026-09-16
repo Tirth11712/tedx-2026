@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
-import RippleBackground from "@/components/RippleBackground";
 import "./team.css";
 
 interface TeamMember {
@@ -490,7 +489,7 @@ export default function TeamPage() {
       {/* ============ HERO ============ */}
       <section className="team-hero" aria-label="Team introduction">
         <div className="team-hero-ripple" aria-hidden="true">
-          <RippleBackground className="team-hero-ripple-canvas" interactive={false} />
+          <img src="/assets/fallback.png" className="team-hero-ripple-canvas" alt="" />
         </div>
 
         <div className="team-hero-lines" aria-hidden="true">

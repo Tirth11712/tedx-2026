@@ -5,7 +5,7 @@ import FAQs from "@/components/FAQs";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import FluidMosaic from "@/components/FluidMosaic";
-import RippleBackground from "@/components/RippleBackground";
+import HeroRippleVideo from "@/components/HeroRippleVideo";
 import CustomCursor from "@/components/CustomCursor";
 
 
@@ -24,7 +24,11 @@ export default function Home() {
 
     <>
       <div className="globalRippleBg" aria-hidden="true">
-        <RippleBackground className="globalRippleCanvas" />
+        <HeroRippleVideo
+          videoClassName="globalRippleVideo"
+          canvasClassName="globalRippleCanvas"
+          canvasReadyClassName="globalRippleCanvasReady"
+        />
         <div className="globalRippleOverlay" />
       </div>
       <CustomCursor />

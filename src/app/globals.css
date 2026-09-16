@@ -79,6 +79,15 @@ a {
   background: var(--tx-bg, #000000);
 }
 
+.globalRippleVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .globalRippleCanvas {
   position: absolute;
   inset: 0;
@@ -86,6 +95,14 @@ a {
   height: 100%;
   display: block;
   touch-action: pan-y;
+  /* Invisible until it has a real distorted video frame to show — the
+     plain video underneath is the fallback before that, on WebGL-unsupported
+     browsers, and permanently after a lost WebGL context. */
+  opacity: 0;
+}
+
+.globalRippleCanvasReady {
+  opacity: 1;
 }
 
 .globalRippleOverlay {
