@@ -141,7 +141,7 @@ export default function SpeakerPage() {
   return (
     <div className="speaker-page-root">
       <div className="speaker-bg-ripple" aria-hidden="true">
-        <img src="/assets/fallback.png" className="speaker-bg-ripple-canvas" alt="" />
+        <img src="/assets/fallback.webp" className="speaker-bg-ripple-canvas" alt="" />
       </div>
 
       <div className="speaker-bg-lines" aria-hidden="true">

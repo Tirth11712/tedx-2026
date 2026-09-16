@@ -489,7 +489,7 @@ export default function TeamPage() {
       {/* ============ HERO ============ */}
       <section className="team-hero" aria-label="Team introduction">
         <div className="team-hero-ripple" aria-hidden="true">
-          <img src="/assets/fallback.png" className="team-hero-ripple-canvas" alt="" />
+          <img src="/assets/fallback.webp" className="team-hero-ripple-canvas" alt="" />
         </div>
 
         <div className="team-hero-lines" aria-hidden="true">

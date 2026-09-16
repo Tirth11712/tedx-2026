@@ -610,7 +610,7 @@ export default function HeroRippleVideo({
         key={isMobile ? 'mobile' : 'desktop'}
         className={videoClassName}
         src={isMobile ? '/assets/mobile.mp4' : '/assets/desktop.mp4'}
-        poster="/assets/fallback.png"
+        poster="/assets/fallback.webp"
         muted
         loop
         playsInline

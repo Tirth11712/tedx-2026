@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import FluidMosaic from "@/components/FluidMosaic";
 import HeroRippleVideo from "@/components/HeroRippleVideo";
-import CustomCursor from "@/components/CustomCursor";
 
 
 export default function Home() {
@@ -31,7 +30,6 @@ export default function Home() {
         />
         <div className="globalRippleOverlay" />
       </div>
-      <CustomCursor />
       <div className="mainpage">
       {/* ------------------------Navbar-------------------------- */}
       {/* <Navbar /> */}
