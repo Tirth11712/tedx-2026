@@ -72,11 +72,21 @@ export default function About() {
               The journey continued in 2024, carried forward by a new set of
               changemakers: Devanshiraje Jadeja, Jasmin Kansagra, and Kabir
               Brahmbhatt, who expanded the vision and upheld the TEDx spirit with
-              fresh voices and diverse ideas. Each year, TEDxSVIT has evolved into
-              a space for curiosity, dialogue, and creative expression — bridging
-              students, professionals, and thought leaders on a stage built by and
-              for ideas that matter. At TEDxSVIT, we don&apos;t just host talks —
-              we build legacies, one idea at a time.
+              fresh voices and diverse ideas.
+            </p>
+            <p className="about-body">
+              In 2025, the baton was passed forward to Kabir Brahmbhatt, Aditi
+              Patel, Vipra Dave, and Dhyani Upadhyay, who successfully carried the
+              event into its next chapter. With their efforts, TEDxSVIT continued
+              to bring together diverse voices, meaningful stories, and ideas that
+              sparked conversations across the campus and beyond.
+            </p>
+            <p className="about-body">
+              Each year, TEDxSVIT has evolved into a space for curiosity, dialogue,
+              and creative expression — bridging students, professionals, and
+              thought leaders on a stage built by and for ideas that matter. At
+              TEDxSVIT, we don&apos;t just host talks — we build legacies, one idea
+              at a time.
             </p>
           </div>
         </section>
