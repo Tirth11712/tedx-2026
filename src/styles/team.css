@@ -96,15 +96,7 @@
   padding-block: clamp(60px, 8vw, 100px);
 }
 
-.dept--paper {
-  background: var(--paper);
-  color: var(--ink);
-  --fg: var(--ink);
-  --fg-dim: #6E6759;
-  --acc: var(--red-deep);
-  --lc: var(--line-ink);
-}
-
+.dept--paper,
 .dept--dark {
   background: var(--ink);
   color: var(--bone);
@@ -112,14 +104,6 @@
   --fg-dim: var(--bone-dim);
   --acc: var(--red-lit);
   --lc: var(--line);
-}
-
-.dept + .dept {
-  border-top: 1px solid var(--line);
-}
-
-.dept--paper + .dept--dark {
-  border-top: 1px solid var(--line);
 }
 
 .dept-head {
@@ -182,10 +166,6 @@
   transition: background 0.4s var(--ease);
 }
 
-.dept--paper .member {
-  background: rgba(23, 23, 23, 0.04);
-}
-
 /* Red slide-up background fill */
 
 .member::before {
@@ -211,10 +191,6 @@
   border-bottom: 1px solid var(--lc);
   overflow: hidden;
   background: #1c1c1c;
-}
-
-.dept--paper .m-top {
-  background: #ded7c6;
 }
 
 /* Photo layer */
@@ -249,10 +225,6 @@
   transform: rotate(90deg);
 }
 
-.dept--paper .member:hover .m-x {
-  color: #fff;
-}
-
 /* Index number */
 
 .m-body {
@@ -285,11 +257,6 @@
 
 .member:hover .m-role {
   color: rgba(255, 255, 255, 0.88);
-}
-
-.dept--paper .member:hover .m-name,
-.dept--paper .member:hover .m-role {
-  color: #fff;
 }
 
 /* ============ CORE TEAM (featured larger grid) ============ */

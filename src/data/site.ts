@@ -25,13 +25,19 @@ export const socialLinks = [
   },
 ] as const;
 
-export const galleryImages = [
-  "/gallery/col1-row1.webp",
-  "/gallery/col1-row2.webp",
-  "/gallery/col2-row1.webp",
-  "/gallery/col2-row2.webp",
-  "/gallery/col3.webp",
-  "/gallery/col4-row1.webp",
-  "/gallery/col4-row2.webp",
-  "/gallery/col5-row1.webp",
+export interface GalleryItem {
+  src: string;
+  alt: string;
+}
+
+export const galleryItems: GalleryItem[] = [
+  { src: "/gallery/event-01.webp", alt: "A speaker mid-talk with their title slide projected behind them" },
+  { src: "/gallery/event-02.webp", alt: "The audience seated for a talk at a past TEDxSVIT edition" },
+  { src: "/gallery/event-03.webp", alt: "The house band performing on stage beside the TEDxSVIT marquee" },
+  { src: "/gallery/event-04.webp", alt: "A speaker presenting beside their title slide and photo" },
+  { src: "/gallery/event-05.webp", alt: "A speaker addressing the audience under a spotlight" },
+  { src: "/gallery/event-06.webp", alt: "A certificate of appreciation being presented to a guest" },
+  { src: "/gallery/event-07.webp", alt: "Three dancers performing beside the illuminated TEDxSVIT sign" },
+  { src: "/gallery/event-08.webp", alt: "A speaker addressing the audience under a spotlight" },
+  { src: "/gallery/event-09.webp", alt: "The full TEDxSVIT team and attendees gathered for a group photo outside the venue" },
 ];

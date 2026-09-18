@@ -39,7 +39,7 @@ export default function MobileNav() {
         data-lenis-prevent
       >
         <div className="mobile-nav-header">
-          <Image src="/brand/logo.png" alt="TEDxSVIT" width={222} height={64} className="mobile-logo" />
+          <Image src="/brand/logo.svg" alt="TEDxSVIT" width={171} height={29} className="mobile-logo" />
           <button type="button" className="mobile-close-btn" onClick={close} aria-label="Close menu">
             ✕
           </button>

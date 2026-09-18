@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import FAQs from "@/components/home/FAQs";
-import FluidMosaic from "@/components/home/FluidMosaic";
 import HeroRippleVideo from "@/components/home/HeroRippleVideo";
+import Moodboard from "@/components/home/Moodboard";
 import Footer from "@/components/layout/Footer";
-import { galleryImages, ticketsHref } from "@/data/site";
+import { galleryItems, ticketsHref } from "@/data/site";
 import "@/styles/home.css";
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
         <section className="heroSection">
           <div className="logoTextButtonContainer">
             <h1 className="logoText">
-              <Image src="/brand/wordmark.svg" width={1129} height={524} alt="TEDxSVIT" priority />
+              <Image src="/brand/wordmark.svg" width={1129} height={524} alt="The Ripple Effect" priority />
             </h1>
             <p className="heroTagline">One Thing Leads to Another</p>
             <div className="addressText">
@@ -37,7 +37,7 @@ export default function Home() {
         </section>
 
         <section className="gallerySection" id="gallery" aria-label="Gallery">
-          <FluidMosaic images={galleryImages} />
+          <Moodboard items={galleryItems} />
         </section>
 
         <div className="FAQContainer">

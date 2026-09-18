@@ -1,0 +1,45 @@
+.moodboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 3.5vw, 46px);
+  padding-block: clamp(6px, 1vw, 14px);
+}
+
+/* Classic polaroid: even white border, thicker strip at the bottom for the caption. */
+.moodboard-card {
+  background: #f4f1ea;
+  padding: clamp(10px, 1.4vw, 16px) clamp(10px, 1.4vw, 16px) clamp(28px, 3vw, 42px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s ease;
+}
+
+.moodboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.moodboard-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f4f1ea;
+}
+
+.moodboard-img {
+  object-fit: contain;
+  filter: saturate(0.94) contrast(1.02);
+}
+
+@media (max-width: 900px) {
+  .moodboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .moodboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

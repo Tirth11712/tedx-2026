@@ -1,14 +1,67 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import type { Speaker } from "@/data/speakers";
 import Footer from "@/components/layout/Footer";
-import PageBackdrop from "@/components/ui/PageBackdrop";
-import { speakers } from "@/data/speakers";
+import { pastSpeakers, speakers } from "@/data/speakers";
 import { useEscapeKey, useScrollLock } from "@/hooks/overlay";
 import "@/styles/speaker.css";
 
 const SWIPE_THRESHOLD = 50;
+
+function SpeakerGrid({
+  items,
+  offset,
+  cardRefs,
+  onOpen,
+}: {
+  items: Speaker[];
+  offset: number;
+  cardRefs: React.MutableRefObject<(HTMLButtonElement | null)[]>;
+  onOpen: (idx: number) => void;
+}) {
+  return (
+    <ul className="sp-grid">
+      {items.map((s, i) => {
+        const idx = offset + i;
+        return (
+          <li key={s.id}>
+            <button
+              type="button"
+              className="sp-card"
+              ref={(el) => {
+                cardRefs.current[idx] = el;
+              }}
+              aria-haspopup="dialog"
+              aria-label={`View details for ${s.name}`}
+              onClick={() => onOpen(idx)}
+            >
+              <span className="sp-card-photo-frame">
+                <Image
+                  src={s.img}
+                  alt=""
+                  fill
+                  sizes="(min-width: 961px) 25vw, 50vw"
+                  className="sp-card-photo"
+                  priority={idx < 2}
+                />
+                {s.edition && <span className="sp-card-edition">{s.edition}</span>}
+                <span className="sp-card-plus" aria-hidden="true">
+                  +
+                </span>
+              </span>
+              <span className="sp-card-info">
+                <span className="sp-card-no">{s.edition ?? s.id}</span>
+                <span className="sp-card-name">{s.name}</span>
+              </span>
+            </button>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
 
 export default function SpeakerPage() {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
@@ -17,6 +70,7 @@ export default function SpeakerPage() {
   const lastOpenedIdx = useRef<number | null>(null);
   const touchStartX = useRef<number | null>(null);
 
+  const list = useMemo(() => [...speakers, ...pastSpeakers], []);
   const isOpen = activeIdx !== null;
 
   const closeModal = useCallback(() => {
@@ -25,13 +79,13 @@ export default function SpeakerPage() {
   }, []);
 
   const showPrev = useCallback(
-    () => setActiveIdx((prev) => (prev === null ? prev : (prev - 1 + speakers.length) % speakers.length)),
-    []
+    () => setActiveIdx((prev) => (prev === null ? prev : (prev - 1 + list.length) % list.length)),
+    [list.length]
   );
 
   const showNext = useCallback(
-    () => setActiveIdx((prev) => (prev === null ? prev : (prev + 1) % speakers.length)),
-    []
+    () => setActiveIdx((prev) => (prev === null ? prev : (prev + 1) % list.length)),
+    [list.length]
   );
 
   useScrollLock(isOpen);
@@ -65,12 +119,10 @@ export default function SpeakerPage() {
     touchStartX.current = null;
   };
 
-  const active = activeIdx !== null ? speakers[activeIdx] : null;
+  const active = activeIdx !== null ? list[activeIdx] : null;
 
   return (
     <div className="speaker-page-root">
-      <PageBackdrop />
-
       <div className="speaker-bg-lines" aria-hidden="true">
         <i />
         <i />
@@ -95,40 +147,24 @@ export default function SpeakerPage() {
             </h1>
           </div>
 
-          <ul className="sp-grid">
-            {speakers.map((s, idx) => (
-              <li key={s.id}>
-                <button
-                  type="button"
-                  className="sp-card"
-                  ref={(el) => {
-                    cardRefs.current[idx] = el;
-                  }}
-                  aria-haspopup="dialog"
-                  aria-label={`View details for ${s.name}`}
-                  onClick={() => openSpeaker(idx)}
-                >
-                  <span className="sp-card-photo-frame">
-                    <Image
-                      src={s.img}
-                      alt=""
-                      fill
-                      sizes="(min-width: 961px) 25vw, 50vw"
-                      className="sp-card-photo"
-                      priority={idx < 2}
-                    />
-                    <span className="sp-card-plus" aria-hidden="true">
-                      +
-                    </span>
-                  </span>
-                  <span className="sp-card-info">
-                    <span className="sp-card-no">{s.id}</span>
-                    <span className="sp-card-name">{s.name}</span>
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ul>
+          {speakers.length > 0 && (
+            <>
+              <p className="sp-section-eyebrow">TEDxSVIT 2026 Lineup</p>
+              <SpeakerGrid items={speakers} offset={0} cardRefs={cardRefs} onOpen={openSpeaker} />
+            </>
+          )}
+
+          {pastSpeakers.length > 0 && (
+            <>
+              <h2 className="sp-section-heading">Past Speakers</h2>
+              <SpeakerGrid
+                items={pastSpeakers}
+                offset={speakers.length}
+                cardRefs={cardRefs}
+                onOpen={openSpeaker}
+              />
+            </>
+          )}
 
           <p className="sp-foot" aria-hidden="true">
             <i>✕</i>
@@ -150,7 +186,7 @@ export default function SpeakerPage() {
             ×
           </button>
 
-          {speakers.length > 1 && (
+          {list.length > 1 && (
             <>
               <button
                 type="button"
@@ -202,6 +238,7 @@ export default function SpeakerPage() {
               <div className="panel-content-col">
                 <div className="panel-topline">
                   <span className="p-tag-pill">{active.tag}</span>
+                  {active.edition && <span className="p-edition-pill">TEDxSVIT {active.edition}</span>}
                 </div>
                 <h2 className="p-talk">{active.talk}</h2>
 

@@ -23,7 +23,7 @@
   padding: 0 clamp(20px, 4vw, 56px);
 }
 
-/* ============ GIANT HERO WORDMARK ============ */
+/* ============ FOOTER LOGO ============ */
 
 .foot-word-wrap {
   width: 100%;
@@ -36,42 +36,17 @@
   border-bottom: 1px solid var(--line);
 }
 
-.foot-wordmark {
-  font-size: clamp(48px, 12.5vw, 170px);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.88;
-  text-transform: uppercase;
-  color: var(--bone);
-  margin: 0;
-  display: flex;
-  align-items: baseline;
-  user-select: none;
-  transition: transform 0.4s var(--ease);
+.foot-logo {
+  height: clamp(36px, 8vw, 110px);
+  width: auto;
+  max-width: 92%;
+  display: block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.foot-wordmark .wm-ted {
-  color: #fff;
-}
-
-.foot-wordmark .wm-x {
-  color: var(--red);
-  margin-right: 0.04em;
-  display: inline-block;
-  transform: translateY(-0.04em);
-}
-
-.foot-wordmark .wm-svit {
-  color: transparent;
-  -webkit-text-stroke: clamp(1px, 0.15vw, 2.5px) rgba(239, 234, 224, 0.4);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  transition: -webkit-text-stroke-color 0.3s ease, color 0.3s ease;
-}
-
-.foot-word-wrap:hover .wm-svit {
-  color: rgba(239, 234, 224, 0.1);
-  -webkit-text-stroke-color: var(--bone);
+.foot-word-wrap:hover .foot-logo {
+  opacity: 0.95;
+  transform: scale(1.015);
 }
 
 /* ============ EDITORIAL COLUMNS ============ */

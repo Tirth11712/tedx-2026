@@ -47,7 +47,10 @@
 /* ============ CENTERED TICKET CARD ============ */
 
 .ticket-wrapper {
+  min-height: calc(100vh - clamp(100px, 12vh, 140px));
+  min-height: calc(100dvh - clamp(100px, 12vh, 140px));
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 

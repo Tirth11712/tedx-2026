@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252 82" width="252" height="82" fill="none">
+  <defs>
+    <style>
+      .ted-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial Black", Arial, sans-serif;
+        font-weight: 900;
+        fill: #EB0028;
+      }
+      .ted-x {
+        font-size: 56px;
+        font-weight: 900;
+      }
+    </style>
+  </defs>
+  <text x="0" y="70" class="ted-text" font-size="86">TED<tspan class="ted-x" dy="-26">x</tspan></text>
+</svg>

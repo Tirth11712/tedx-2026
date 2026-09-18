@@ -143,6 +143,7 @@
   overflow: hidden;
   background: var(--ink-2);
   border: 1px solid var(--line);
+  border-radius: 14px;
   transition: border-color 0.3s ease;
 }
 
@@ -211,6 +212,44 @@
   line-height: 1.15;
   text-transform: uppercase;
   letter-spacing: -0.01em;
+  color: var(--bone);
+}
+
+.sp-card-edition {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--bone);
+  background: rgba(23, 23, 23, 0.72);
+  border: 1px solid rgba(239, 234, 224, 0.2);
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+/* ============ SPEAKER SECTIONS ============ */
+
+.sp-section-eyebrow {
+  margin-bottom: clamp(20px, 3vw, 32px);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red-lit);
+}
+
+.sp-section-heading {
+  margin-top: clamp(56px, 8vw, 96px);
+  margin-bottom: clamp(24px, 3.5vw, 40px);
+  padding-top: clamp(32px, 5vw, 56px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(26px, 3.6vw, 44px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
   color: var(--bone);
 }
 
@@ -320,6 +359,17 @@
   white-space: nowrap;
 }
 
+.p-edition-pill {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  color: #fff;
+  background: var(--red);
+  white-space: nowrap;
+}
+
 .panel-in {
   background: var(--ink);
   color: var(--bone);
@@ -344,6 +394,7 @@
   overflow: hidden;
   background: var(--ink-2);
   border: 1px solid rgba(239, 234, 224, 0.12);
+  border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
