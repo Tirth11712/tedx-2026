@@ -426,4 +426,16 @@
   .gf-modal-body {
     padding: 16px 14px;
   }
+
+  .ticket-perforation {
+    margin-inline: 0;
+  }
+
+  .ticket-perforation::before {
+    left: -12px;
+  }
+
+  .ticket-perforation::after {
+    right: -12px;
+  }
 }

@@ -51,11 +51,14 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.16em;
+  row-gap: 0.12em;
+  max-width: 100%;
 }
 
 .about-brand-logo {
   height: 1em;
   width: auto;
+  max-width: 100%;
   display: inline-block;
   vertical-align: middle;
 }
