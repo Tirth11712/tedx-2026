@@ -5,9 +5,10 @@
 @media (max-width: 768px) {
   .mobile-hamburger {
     display: flex;
-    position: fixed;
-    top: 0.95rem;
+    position: absolute;
+    top: 50%;
     right: 1.1rem;
+    transform: translateY(-50%);
     z-index: 99999;
     flex-direction: column;
     justify-content: space-around;

@@ -1,14 +1,13 @@
-/* ============ NAVBAR — matches tedxsvit.in exactly ============ */
+/* ============ NAVBAR ============ */
 
 .NavBar {
   position: fixed;
-  top: 0;
+  top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
+  width: min(1120px, 92%);
+  height: 72px;
   z-index: 900;
-  padding-top: 2%;
-  height: 15%;
   display: flex;
   align-items: center;
 }
@@ -34,7 +33,7 @@
 /* ---- Logo ---- */
 
 .logo {
-  padding-left: 2rem;
+  padding-left: 0.5rem;
   position: relative;
   font-weight: 700;
   display: flex;
@@ -43,7 +42,7 @@
 }
 
 .logo img {
-  height: 3rem;
+  height: 2.6rem;
   width: auto;
 }
 
@@ -60,7 +59,7 @@
   color: white;
   text-decoration: none;
   background-color: transparent;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   transition: all 0.3s ease;
   font-family: "Host Grotesk", sans-serif;
 }
@@ -75,11 +74,11 @@
 .get-tickets .tickets-button,
 .tickets-button {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background-color: #e50914;
   color: white;
   border: none;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.4rem;
   border-radius: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -93,135 +92,74 @@
   transform: translateY(-1px);
 }
 
-/* ============ RESPONSIVE — matches live site breakpoints ============ */
+/* ============ RESPONSIVE ============ */
 
-/* Mobile ≤ 480px */
-@media (max-width: 480px) {
+/* Mobile ≤ 768px — hamburger menu takes over */
+@media (max-width: 768px) {
   .NavBar {
+    top: 0;
     left: 0;
     transform: none;
-    width: 100vw;
-    padding-top: 2%;
+    width: 100%;
     height: auto;
-    min-height: 10rem;
-  }
-
-  .logo {
-    padding-left: 1rem;
-  }
-
-  .logo img {
-    height: 2.5rem;
-  }
-
-  .desktop-nav {
-    display: none !important;
+    padding: 0.6rem 0.8rem;
   }
 
   .glassNavbarContainer {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 28px !important;
+    height: 56px;
+    border-radius: 16px !important;
   }
-}
 
-/* Tablet 481px – 768px */
-@media (min-width: 481px) and (max-width: 768px) {
-  .NavBar {
-    left: 0;
-    transform: none;
-    width: 100vw;
-    height: auto;
-    min-height: 9rem;
-    padding-top: 1.5%;
+  .navbar-content {
+    padding: 0 0.8rem;
+  }
+
+  .logo {
+    padding-left: 0;
   }
 
   .logo img {
-    height: 2.8rem;
+    height: 2.1rem;
   }
 
   .desktop-nav {
     display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 1.9rem;
   }
 }
 
 /* Tablet 769px – 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
   .NavBar {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
+    width: 94%;
   }
 
   .nav-links {
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .nav-links a {
-    font-size: 1.3rem;
+    font-size: 1.05rem;
   }
 
   .tickets-button {
-    font-size: 0.9rem;
-    padding: 0.8rem 1.2rem;
-  }
-
-  .logo {
-    padding-left: 1.5rem;
-  }
-}
-
-/* Large 1025px – 1366px */
-@media (min-width: 1025px) and (max-width: 1366px) {
-  .NavBar {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
-  }
-
-  .nav-links a {
-    font-size: 1.4rem;
-  }
-}
-
-/* XL ≥ 1367px */
-@media (min-width: 1367px) {
-  .NavBar {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-  }
-
-  .nav-links {
-    gap: 2.5rem;
-  }
-
-  .nav-links a {
-    font-size: 1.3rem;
-  }
-
-  .tickets-button {
-    font-size: 1.1rem;
-    padding: 1.2rem 1.8rem;
+    font-size: 0.88rem;
+    padding: 0.65rem 1.1rem;
   }
 }
 
 /* Ultra-wide ≥ 1920px */
 @media (min-width: 1920px) {
   .nav-links {
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .nav-links a {
-    font-size: 1.7rem;
-  }
-}
-
-/* Short screens */
-@media (max-height: 600px) {
-  .NavBar {
-    height: auto;
-    min-height: 6rem;
-    padding-top: 1%;
+    font-size: 1.3rem;
   }
 }
