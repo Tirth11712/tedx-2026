@@ -1,14 +1,20 @@
+"use client";
+
+import { useCallback, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import GlassSurface from "@/components/ui/GlassSurface";
-import MobileNav from "./MobileNav";
+import MobileNav, { MobileNavTrigger } from "./MobileNav";
 import { navLinks, ticketsHref } from "@/data/site";
 import "@/styles/navbar.css";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const close = useCallback(() => setIsOpen(false), []);
+  const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
+
   return (
     <header className="NavBar">
-      <MobileNav />
       <GlassSurface width="100%" height="100%" borderRadius={24} className="glassNavbarContainer">
         <nav className="navbar-content" aria-label="Main">
           <Link href="/" className="logo" aria-label="TEDxSVIT home">
@@ -26,8 +32,12 @@ export default function Navbar() {
           <Link href={ticketsHref} className="tickets-button desktop-nav">
             Get Tickets
           </Link>
+
+          <MobileNavTrigger isOpen={isOpen} onToggle={toggle} />
         </nav>
       </GlassSurface>
+
+      <MobileNav isOpen={isOpen} onClose={close} />
     </header>
   );
 }
