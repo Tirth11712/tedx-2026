@@ -6,9 +6,8 @@
   .mobile-hamburger {
     display: flex;
     position: absolute;
-    top: 50%;
-    right: 1.1rem;
-    transform: translateY(-50%);
+    top: calc(0.6rem + 7px);
+    right: 1.3rem;
     z-index: 99999;
     flex-direction: column;
     justify-content: space-around;
