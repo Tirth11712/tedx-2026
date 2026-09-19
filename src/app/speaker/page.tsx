@@ -53,7 +53,7 @@ function SpeakerGrid({
                 </span>
               </span>
               <span className="sp-card-info">
-                <span className="sp-card-no">{s.edition ?? s.id}</span>
+                {!s.edition && <span className="sp-card-no">{s.id}</span>}
                 <span className="sp-card-name">{s.name}</span>
               </span>
             </button>
