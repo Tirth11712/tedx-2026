@@ -10,6 +10,7 @@ import {
   Gloria_Hallelujah,
   Schoolbell,
   Just_Another_Hand,
+  Playfair_Display,
 } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
@@ -84,6 +85,14 @@ const justAnotherHand = Just_Another_Hand({
   variable: "--font-just-another-hand",
 });
 
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-playfair",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "TEDxSVIT",
@@ -103,7 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable} ${gloriaHallelujah.variable} ${schoolbell.variable} ${justAnotherHand.variable}`}
+      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable} ${gloriaHallelujah.variable} ${schoolbell.variable} ${justAnotherHand.variable} ${playfairDisplay.variable}`}
     >
       <body>
         <SmoothScrollProvider>
