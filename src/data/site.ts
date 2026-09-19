@@ -26,7 +26,7 @@ export const socialLinks = [
 ] as const;
 
 /** CSS variable name for the caption's handwritten font, set per photo in layout.tsx. */
-export type CaptionFont = "--font-caption" | "--font-patrick-hand";
+export type CaptionFont = "--font-caption" | "--font-patrick-hand" | "--font-rock-salt";
 
 export interface GalleryItem {
   src: string;
@@ -48,7 +48,12 @@ export const galleryItems: GalleryItem[] = [
     caption: "Every idea needs someone to hear it",
     captionFont: "--font-patrick-hand",
   },
-  { src: "/gallery/event-03.webp", alt: "The house band performing on stage beside the TEDxSVIT marquee" },
+  {
+    src: "/gallery/event-03.webp",
+    alt: "The house band performing on stage beside the TEDxSVIT marquee",
+    caption: "Perfect Interval",
+    captionFont: "--font-rock-salt",
+  },
   { src: "/gallery/event-04.webp", alt: "A speaker presenting beside their title slide and photo" },
   { src: "/gallery/event-05.webp", alt: "A speaker addressing the audience under a spotlight" },
   { src: "/gallery/event-06.webp", alt: "A certificate of appreciation being presented to a guest" },
