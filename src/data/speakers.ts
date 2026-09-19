@@ -16,15 +16,16 @@ export const speakers: Speaker[] = [
   {
     id: "2026-01",
     name: "Tushar Sanghvi",
-    role: "Entrepreneur",
-    tag: "Entrepreneurship",
-    talk: "Entrepreneur",
+    role: "Chairman, Silkflex India Limited",
+    tag: "Business | Entrepreneurship",
+    talk: "A Journey of Curiosity, Courage, and Conviction",
     img: "/speakers/placeholder.svg",
-    desc: "An entrepreneur joining the TEDxSVIT 2026 stage to share insights from their journey in business.",
+    desc: "Even while navigating financial debts and working a simple sales job, Tushar Sanghvi's curious mind led him to see an opportunity where others might have seen just another job. What began as a sales career soon transformed into a journey of bringing an international brand and its franchise to India, eventually building Silkflex India Limited into a successful enterprise. His journey is one of curiosity, courage, and conviction—of taking an opportunity, believing in its potential, and turning it into a legacy. Today, having built a business around importing and distributing products, Tushar is taking the next leap by moving towards manufacturing them within Gujarat itself. His story offers students a perspective on entrepreneurship beyond conventional startup success: sometimes, the biggest opportunities begin with a curious mind, a willingness to take risks, and the determination to build something that lasts.",
     meta: [
-      { label: "Focus", val: "Entrepreneurship" },
-      { label: "Edition", val: "TEDxSVIT 2026" },
-      { label: "Bio", val: "Full Details Coming Soon" },
+      { label: "Business", val: "Chairman, Silkflex India Limited" },
+      { label: "Journey", val: "From Sales Professional to Entrepreneur & Industry Leader" },
+      { label: "Expertise", val: "20+ years of industrial experience" },
+      { label: "Key Themes", val: "Entrepreneurship • Business Expansion • Manufacturing • Strategic Growth" },
     ],
   },
   {
