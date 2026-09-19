@@ -33,7 +33,8 @@ export type CaptionFont =
   | "--font-permanent-marker"
   | "--font-kalam"
   | "--font-caveat"
-  | "--font-gloria-hallelujah";
+  | "--font-gloria-hallelujah"
+  | "--font-schoolbell";
 
 export interface GalleryItem {
   src: string;
@@ -85,6 +86,11 @@ export const galleryItems: GalleryItem[] = [
     caption: "Graceful Begining",
     captionFont: "--font-gloria-hallelujah",
   },
-  { src: "/gallery/event-08.webp", alt: "A speaker addressing the audience under a spotlight" },
+  {
+    src: "/gallery/event-08.webp",
+    alt: "A speaker addressing the audience under a spotlight",
+    caption: "Some conversations stay with you",
+    captionFont: "--font-schoolbell",
+  },
   { src: "/gallery/event-09.webp", alt: "The full TEDxSVIT team and attendees gathered for a group photo outside the venue" },
 ];

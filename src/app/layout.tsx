@@ -8,6 +8,7 @@ import {
   Kalam,
   Caveat,
   Gloria_Hallelujah,
+  Schoolbell,
 } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
@@ -68,6 +69,13 @@ const gloriaHallelujah = Gloria_Hallelujah({
   variable: "--font-gloria-hallelujah",
 });
 
+const schoolbell = Schoolbell({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-schoolbell",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "TEDxSVIT",
@@ -87,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable} ${gloriaHallelujah.variable}`}
+      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable} ${gloriaHallelujah.variable} ${schoolbell.variable}`}
     >
       <body>
         <SmoothScrollProvider>
