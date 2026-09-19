@@ -69,17 +69,29 @@
 
 .logoText {
   width: 100%;
-  max-width: clamp(260px, 80vw, 540px);
+  max-width: 760px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  text-align: center;
 }
 
-.logoText img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+.logoText-line {
+  font-family: var(--font-fraunces), serif;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.logoText-line:first-child {
+  font-size: clamp(2.4rem, 9vw, 5.5rem);
+}
+
+.logoText-line:last-child {
+  font-size: clamp(2.9rem, 11vw, 6.8rem);
 }
 
 .heroTagline {
@@ -195,10 +207,6 @@
 @media (max-width: 480px) {
   .heroSection {
     padding-top: 80px;
-  }
-
-  .logoText {
-    max-width: 280px;
   }
 
   .heroTagline,

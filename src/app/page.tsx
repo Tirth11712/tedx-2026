@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import FAQs from "@/components/home/FAQs";
 import HeroRippleVideo from "@/components/home/HeroRippleVideo";
@@ -23,7 +22,8 @@ export default function Home() {
         <section className="heroSection">
           <div className="logoTextButtonContainer">
             <h1 className="logoText">
-              <Image src="/brand/wordmark.svg" width={1129} height={524} alt="The Ripple Effect" priority />
+              <span className="logoText-line">The</span>
+              <span className="logoText-line">Ripple Effect</span>
             </h1>
             <p className="heroTagline">It starts with one</p>
             <div className="addressText">

@@ -11,6 +11,7 @@ import {
   Schoolbell,
   Just_Another_Hand,
   Playfair_Display,
+  Fraunces,
 } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
@@ -93,6 +94,14 @@ const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
 });
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["600"],
+  style: ["italic"],
+  display: "swap",
+  variable: "--font-fraunces",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "TEDxSVIT",
@@ -112,7 +121,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable} ${gloriaHallelujah.variable} ${schoolbell.variable} ${justAnotherHand.variable} ${playfairDisplay.variable}`}
+      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable} ${gloriaHallelujah.variable} ${schoolbell.variable} ${justAnotherHand.variable} ${playfairDisplay.variable} ${fraunces.variable}`}
     >
       <body>
         <SmoothScrollProvider>
