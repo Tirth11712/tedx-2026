@@ -5,6 +5,7 @@ import {
   Patrick_Hand_SC,
   Rock_Salt,
   Permanent_Marker,
+  Kalam,
 } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
@@ -44,6 +45,13 @@ const permanentMarker = Permanent_Marker({
   variable: "--font-permanent-marker",
 });
 
+const kalam = Kalam({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-kalam",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "TEDxSVIT",
@@ -63,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable}`}
+      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable}`}
     >
       <body>
         <SmoothScrollProvider>

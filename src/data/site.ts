@@ -30,7 +30,8 @@ export type CaptionFont =
   | "--font-caption"
   | "--font-patrick-hand"
   | "--font-rock-salt"
-  | "--font-permanent-marker";
+  | "--font-permanent-marker"
+  | "--font-kalam";
 
 export interface GalleryItem {
   src: string;
@@ -64,7 +65,12 @@ export const galleryItems: GalleryItem[] = [
     caption: "Stories that deserve the spotlight",
     captionFont: "--font-permanent-marker",
   },
-  { src: "/gallery/event-05.webp", alt: "A speaker addressing the audience under a spotlight" },
+  {
+    src: "/gallery/event-05.webp",
+    alt: "A speaker addressing the audience under a spotlight",
+    caption: "Ideas take shape when shared",
+    captionFont: "--font-kalam",
+  },
   { src: "/gallery/event-06.webp", alt: "A certificate of appreciation being presented to a guest" },
   { src: "/gallery/event-07.webp", alt: "Three dancers performing beside the illuminated TEDxSVIT sign" },
   { src: "/gallery/event-08.webp", alt: "A speaker addressing the audience under a spotlight" },
