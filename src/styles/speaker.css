@@ -356,7 +356,7 @@
   padding: 5px 12px;
   border: 1px solid var(--bone-dim);
   color: var(--bone-dim);
-  white-space: nowrap;
+  max-width: 100%;
 }
 
 .p-edition-pill {
@@ -368,6 +368,7 @@
   color: #fff;
   background: var(--red);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .panel-in {
