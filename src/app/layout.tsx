@@ -6,6 +6,7 @@ import {
   Rock_Salt,
   Permanent_Marker,
   Kalam,
+  Caveat,
 } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
@@ -52,6 +53,13 @@ const kalam = Kalam({
   variable: "--font-kalam",
 });
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-caveat",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "TEDxSVIT",
@@ -71,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable}`}
+      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable}`}
     >
       <body>
         <SmoothScrollProvider>

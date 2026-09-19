@@ -31,7 +31,8 @@ export type CaptionFont =
   | "--font-patrick-hand"
   | "--font-rock-salt"
   | "--font-permanent-marker"
-  | "--font-kalam";
+  | "--font-kalam"
+  | "--font-caveat";
 
 export interface GalleryItem {
   src: string;
@@ -71,7 +72,12 @@ export const galleryItems: GalleryItem[] = [
     caption: "Ideas take shape when shared",
     captionFont: "--font-kalam",
   },
-  { src: "/gallery/event-06.webp", alt: "A certificate of appreciation being presented to a guest" },
+  {
+    src: "/gallery/event-06.webp",
+    alt: "A certificate of appreciation being presented to a guest",
+    caption: "More than words on a stage",
+    captionFont: "--font-caveat",
+  },
   { src: "/gallery/event-07.webp", alt: "Three dancers performing beside the illuminated TEDxSVIT sign" },
   { src: "/gallery/event-08.webp", alt: "A speaker addressing the audience under a spotlight" },
   { src: "/gallery/event-09.webp", alt: "The full TEDxSVIT team and attendees gathered for a group photo outside the venue" },
