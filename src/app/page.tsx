@@ -25,7 +25,7 @@ export default function Home() {
             <h1 className="logoText">
               <Image src="/brand/wordmark.svg" width={1129} height={524} alt="The Ripple Effect" priority />
             </h1>
-            <p className="heroTagline">One Thing Leads to Another</p>
+            <p className="heroTagline">It starts with one</p>
             <div className="addressText">
               <p>September 10, 2026</p>
               <p>Architecture Auditorium SVIT Campus, Vasad</p>
