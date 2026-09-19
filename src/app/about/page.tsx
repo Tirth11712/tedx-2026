@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Footer from "@/components/layout/Footer";
+import PageBackdrop from "@/components/ui/PageBackdrop";
 import "@/styles/about.css";
+import config from "@/config.json";
 
 export const metadata: Metadata = {
   title: "About",
@@ -12,6 +14,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className="about-page-root">
+      <PageBackdrop />
       <main>
         {/* ---- About TEDx ---- */}
         <section className="about-sec" id="about-tedx">
@@ -20,7 +23,7 @@ export default function About() {
             <h1 className="about-title about-title--brand">
               <span className="about-title-word">About</span>{" "}
               <Image
-                src="/brand/tedx-mark.svg?v=4"
+                src={config.media.tedxMark}
                 alt="TEDx"
                 width={252}
                 height={82}
@@ -46,7 +49,7 @@ export default function About() {
             <h2 className="about-title about-title--brand">
               <span className="about-title-word">About</span>{" "}
               <Image
-                src="/brand/logo.svg?v=4"
+                src={config.media.logo}
                 alt="TEDxSVIT"
                 width={490}
                 height={82}

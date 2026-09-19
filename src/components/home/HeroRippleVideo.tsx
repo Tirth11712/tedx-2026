@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import config from '@/config.json'
 
-const MOBILE_BREAKPOINT = 768
 const MAX_DROPS = 20
 
 const VERT_SRC = `#version 300 es
@@ -151,17 +151,9 @@ export default function HeroRippleVideo({
   canvasClassName,
   canvasReadyClassName,
 }: HeroRippleVideoProps) {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null)
   const [canvasReady, setCanvasReady] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const update = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
-    update()
-    window.addEventListener('resize', update)
-    return () => window.removeEventListener('resize', update)
-  }, [])
 
   useEffect(() => {
     const video = videoRef.current
@@ -172,7 +164,7 @@ export default function HeroRippleVideo({
     if (!prefersReducedMotion) {
       video.play().catch(() => {})
     }
-  }, [isMobile])
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -599,18 +591,15 @@ export default function HeroRippleVideo({
       gl.deleteBuffer(vbo)
       gl.deleteVertexArray(vao)
     }
-  }, [isMobile])
-
-  if (isMobile === null) return null
+  }, [])
 
   return (
     <>
       <video
         ref={videoRef}
-        key={isMobile ? 'mobile' : 'desktop'}
         className={videoClassName}
-        src={isMobile ? '/media/hero-mobile.mp4' : '/media/hero-desktop.mp4'}
-        poster="/media/backdrop.webp"
+        src={config.media.heroVideo}
+        poster={config.media.heroPoster}
         muted
         loop
         playsInline
@@ -618,15 +607,16 @@ export default function HeroRippleVideo({
         disablePictureInPicture
         aria-hidden="true"
       />
-      <canvas
-        ref={canvasRef}
-        key={isMobile ? 'mobile-canvas' : 'desktop-canvas'}
-        className={
-          canvasReady && canvasReadyClassName
-            ? `${canvasClassName ?? ''} ${canvasReadyClassName}`.trim()
-            : canvasClassName
-        }
-      />
+      {config.rippleEffect && (
+        <canvas
+          ref={canvasRef}
+          className={
+            canvasReady && canvasReadyClassName
+              ? `${canvasClassName ?? ''} ${canvasReadyClassName}`.trim()
+              : canvasClassName
+          }
+        />
+      )}
     </>
   )
 }

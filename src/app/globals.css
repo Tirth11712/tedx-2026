@@ -78,7 +78,6 @@ img {
 
 .page-backdrop-img {
   object-fit: cover;
-  opacity: 0.2;
 }
 
 @media (prefers-reduced-motion: reduce) {
