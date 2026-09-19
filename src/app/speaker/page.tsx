@@ -186,33 +186,6 @@ export default function SpeakerPage() {
             ×
           </button>
 
-          {list.length > 1 && (
-            <>
-              <button
-                type="button"
-                className="sp-modal-nav sp-modal-prev"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  showPrev();
-                }}
-                aria-label="Previous speaker"
-              >
-                ‹
-              </button>
-              <button
-                type="button"
-                className="sp-modal-nav sp-modal-next"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  showNext();
-                }}
-                aria-label="Next speaker"
-              >
-                ›
-              </button>
-            </>
-          )}
-
           <div
             className="sp-modal"
             role="dialog"
@@ -232,6 +205,33 @@ export default function SpeakerPage() {
                     sizes="(max-width: 960px) 300px, 340px"
                     className="speaker-photo"
                   />
+
+                  {list.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        className="sp-modal-nav sp-modal-prev"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          showPrev();
+                        }}
+                        aria-label="Previous speaker"
+                      >
+                        ‹
+                      </button>
+                      <button
+                        type="button"
+                        className="sp-modal-nav sp-modal-next"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          showNext();
+                        }}
+                        aria-label="Next speaker"
+                      >
+                        ›
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
 
