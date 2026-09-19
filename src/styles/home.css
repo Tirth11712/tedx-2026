@@ -107,6 +107,16 @@
   padding-inline: 0.5rem;
 }
 
+.heroTagline-highlight {
+  color: var(--red-lit);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgba(230, 43, 31, 0.55);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1.5px;
+}
+
 .addressText {
   margin-top: 1.25rem;
 }

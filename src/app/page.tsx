@@ -25,7 +25,9 @@ export default function Home() {
               <span className="logoText-line">The</span>
               <span className="logoText-line">Ripple Effect</span>
             </h1>
-            <p className="heroTagline">It starts with one</p>
+            <p className="heroTagline">
+              It starts with <span className="heroTagline-highlight">one</span>
+            </p>
             <div className="addressText">
               <p>October 10, 2026</p>
               <p>Architecture Auditorium SVIT Campus, Vasad</p>
