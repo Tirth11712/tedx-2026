@@ -50,7 +50,7 @@ export const speakers: Speaker[] = [
     tag: "Sports | Strength & Conditioning",
     talk: "Elevating Elite Cricketing Fitness",
     img: "/speakers/placeholder.svg",
-    desc: "Professional cricket Strength and Conditioning coach affiliated with both the Baroda Cricket Association (BCA) and the Cricket Association of Mizoram (CAM). Having notably served as a trainer for the India Under-19 national cricket team, he brings high-performance expertise in youth athletic development, endurance conditioning, and injury prevention. Across his domestic appointments, he specializes in administering benchmark fitness testing protocols and engineering customized training regimens designed to maximize player stamina, durability, and on-field athletic output.",
+    desc: "A professional cricket Strength & Conditioning Coach associated with BCA and CAM, with experience as a trainer for the India U-19 national cricket team. He specializes in youth athletic development, fitness testing, endurance, injury prevention, and customized training programs to enhance players' performance and durability.",
     meta: [
       { label: "Domestic Associations", val: "Baroda Cricket Association, Mizoram Cricket Association" },
       { label: "National Duty", val: "Trainer, India Under-19 Cricket Team" },
