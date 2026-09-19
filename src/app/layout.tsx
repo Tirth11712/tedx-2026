@@ -1,5 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Host_Grotesk, Covered_By_Your_Grace, Patrick_Hand_SC, Rock_Salt } from "next/font/google";
+import {
+  Host_Grotesk,
+  Covered_By_Your_Grace,
+  Patrick_Hand_SC,
+  Rock_Salt,
+  Permanent_Marker,
+} from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import "./globals.css";
@@ -31,6 +37,13 @@ const rockSalt = Rock_Salt({
   variable: "--font-rock-salt",
 });
 
+const permanentMarker = Permanent_Marker({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-permanent-marker",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "TEDxSVIT",
@@ -50,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable}`}
+      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable}`}
     >
       <body>
         <SmoothScrollProvider>

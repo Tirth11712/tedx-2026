@@ -26,7 +26,11 @@ export const socialLinks = [
 ] as const;
 
 /** CSS variable name for the caption's handwritten font, set per photo in layout.tsx. */
-export type CaptionFont = "--font-caption" | "--font-patrick-hand" | "--font-rock-salt";
+export type CaptionFont =
+  | "--font-caption"
+  | "--font-patrick-hand"
+  | "--font-rock-salt"
+  | "--font-permanent-marker";
 
 export interface GalleryItem {
   src: string;
@@ -54,7 +58,12 @@ export const galleryItems: GalleryItem[] = [
     caption: "Perfect Interval",
     captionFont: "--font-rock-salt",
   },
-  { src: "/gallery/event-04.webp", alt: "A speaker presenting beside their title slide and photo" },
+  {
+    src: "/gallery/event-04.webp",
+    alt: "A speaker presenting beside their title slide and photo",
+    caption: "Stories that deserve the spotlight",
+    captionFont: "--font-permanent-marker",
+  },
   { src: "/gallery/event-05.webp", alt: "A speaker addressing the audience under a spotlight" },
   { src: "/gallery/event-06.webp", alt: "A certificate of appreciation being presented to a guest" },
   { src: "/gallery/event-07.webp", alt: "Three dancers performing beside the illuminated TEDxSVIT sign" },
