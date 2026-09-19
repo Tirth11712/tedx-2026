@@ -6,7 +6,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: min(1120px, 92%);
-  height: 72px;
+  height: 80px;
   z-index: 900;
   display: flex;
   align-items: center;
@@ -106,7 +106,7 @@
   }
 
   .glassNavbarContainer {
-    height: 56px;
+    height: 62px;
     border-radius: 16px !important;
   }
 
