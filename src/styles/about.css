@@ -46,6 +46,10 @@
   color: var(--bone);
 }
 
+.about-title-word {
+  font-size: 1.07em;
+}
+
 .about-title--brand {
   display: flex;
   flex-wrap: wrap;

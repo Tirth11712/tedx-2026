@@ -18,7 +18,7 @@ export default function About() {
           <div className="wrap">
             <span className="about-eyebrow">What is TEDx?</span>
             <h1 className="about-title about-title--brand">
-              About{" "}
+              <span className="about-title-word">About</span>{" "}
               <Image
                 src="/brand/tedx-mark.svg?v=4"
                 alt="TEDx"
@@ -44,7 +44,7 @@ export default function About() {
           <div className="wrap">
             <span className="about-eyebrow">Our Story</span>
             <h2 className="about-title about-title--brand">
-              About{" "}
+              <span className="about-title-word">About</span>{" "}
               <Image
                 src="/brand/logo.svg?v=4"
                 alt="TEDxSVIT"
