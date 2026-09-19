@@ -45,7 +45,6 @@ function SpeakerGrid({
                   sizes="(min-width: 961px) 25vw, 50vw"
                   className="sp-card-photo"
                   priority={idx < 2}
-                  {...(s.blurDataURL ? { placeholder: "blur", blurDataURL: s.blurDataURL } : {})}
                 />
                 {s.edition && <span className="sp-card-edition">{s.edition}</span>}
                 <span className="sp-card-plus" aria-hidden="true">
@@ -205,7 +204,6 @@ export default function SpeakerPage() {
                     fill
                     sizes="(max-width: 960px) 300px, 340px"
                     className="speaker-photo"
-                    {...(active.blurDataURL ? { placeholder: "blur", blurDataURL: active.blurDataURL } : {})}
                   />
 
                   {list.length > 1 && (
