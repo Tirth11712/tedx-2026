@@ -43,7 +43,7 @@ export const speakers: Speaker[] = [
   },
   {
     id: "2026-03",
-    name: "Shahbaaz Mansuri",
+    name: "Shahbaj Mansuri",
     role: "U19 Indian Cricket Coach",
     tag: "Sports",
     talk: "U19 Indian Cricket Coach",
