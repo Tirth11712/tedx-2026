@@ -28,10 +28,15 @@ export const socialLinks = [
 export interface GalleryItem {
   src: string;
   alt: string;
+  caption?: string;
 }
 
 export const galleryItems: GalleryItem[] = [
-  { src: "/gallery/event-01.webp", alt: "A speaker mid-talk with their title slide projected behind them" },
+  {
+    src: "/gallery/event-01.webp",
+    alt: "A speaker mid-talk with their title slide projected behind them",
+    caption: "A thought worth pausing for",
+  },
   { src: "/gallery/event-02.webp", alt: "The audience seated for a talk at a past TEDxSVIT edition" },
   { src: "/gallery/event-03.webp", alt: "The house band performing on stage beside the TEDxSVIT marquee" },
   { src: "/gallery/event-04.webp", alt: "A speaker presenting beside their title slide and photo" },

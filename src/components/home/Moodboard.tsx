@@ -17,6 +17,7 @@ export default function Moodboard({ items }: { items: GalleryItem[] }) {
               priority={i < 2}
             />
           </div>
+          {item.caption && <figcaption className="moodboard-caption">{item.caption}</figcaption>}
         </figure>
       ))}
     </div>

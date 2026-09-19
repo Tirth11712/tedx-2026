@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Host_Grotesk } from "next/font/google";
+import { Host_Grotesk, Covered_By_Your_Grace } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import "./globals.css";
@@ -8,6 +8,13 @@ const hostGrotesk = Host_Grotesk({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-host-grotesk",
+});
+
+const coveredByYourGrace = Covered_By_Your_Grace({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-caption",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +34,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={hostGrotesk.variable}>
+    <html lang="en" className={`${hostGrotesk.variable} ${coveredByYourGrace.variable}`}>
       <body>
         <SmoothScrollProvider>
           <Navbar />
