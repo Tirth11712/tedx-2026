@@ -45,15 +45,15 @@ export const speakers: Speaker[] = [
   {
     id: "2026-03",
     name: "Shahbaj Mansuri",
-    role: "U19 Indian Cricket Coach",
-    tag: "Sports",
-    talk: "U19 Indian Cricket Coach",
+    role: "Strength & Conditioning Coach",
+    tag: "Sports | Strength & Conditioning",
+    talk: "Elevating Elite Cricketing Fitness",
     img: "/speakers/placeholder.svg",
-    desc: "Coach of the U19 Indian cricket team, joining the TEDxSVIT 2026 stage to share insights from the sport.",
+    desc: "Professional cricket Strength and Conditioning coach affiliated with both the Baroda Cricket Association (BCA) and the Cricket Association of Mizoram (CAM). Having notably served as a trainer for the India Under-19 national cricket team, he brings high-performance expertise in youth athletic development, endurance conditioning, and injury prevention. Across his domestic appointments, he specializes in administering benchmark fitness testing protocols and engineering customized training regimens designed to maximize player stamina, durability, and on-field athletic output.",
     meta: [
-      { label: "Role", val: "U19 Indian Cricket Coach" },
-      { label: "Edition", val: "TEDxSVIT 2026" },
-      { label: "Bio", val: "Full Details Coming Soon" },
+      { label: "Domestic Associations", val: "Baroda Cricket Association, Mizoram Cricket Association" },
+      { label: "National Duty", val: "Trainer, India Under-19 Cricket Team" },
+      { label: "Specialization", val: "Strength & Conditioning, Injury Prevention & Athletic Testing" },
     ],
   },
   {
