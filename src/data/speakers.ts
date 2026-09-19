@@ -37,11 +37,11 @@ export const speakers: Speaker[] = [
     tag: "Wellness | Author & Therapist",
     talk: "Healing Through Words and Energy",
     img: "/speakers/placeholder.svg",
-    desc: "Urmi Sanghavi Mehta is a professional hypnotherapist, counsellor, and behavior analyst with over six years of experience in the field. Her journey into healing inspired her to write Fatal Love – A Love Undone, a suspenseful novel exploring human emotions, self-love, and hope. As a mother and healing practitioner, she works with various modalities, including hypnotherapy and graphology, using her understanding of human behavior to bring authenticity and emotion to her work. Her philosophy is rooted in the belief that the intention behind an action shapes its outcome.",
+    desc: "Urmi Mehta is an experienced energy healing practitioner and teacher specializing in hypnotherapy, graphology, numerology, and other healing modalities. With 9 years of experience, she helps people explore emotions, self-awareness, and inner transformation. She is also the author of Fatal Love – A Love Undone, a mystery exploring the complexities of human emotions. A dedicated mother and lifelong learner, Urmi believes that the intention behind every beginning shapes its outcome.",
     meta: [
       { label: "Wellness", val: "Professional Hypnotherapist & Counsellor" },
       { label: "Journey", val: "From Personal Expression to Published Author & Full-Time Mother" },
-      { label: "Expertise", val: "6+ years of experience" },
+      { label: "Expertise", val: "9+ years of experience" },
       { label: "Key Themes", val: "Complex Emotions • Suspense Fiction • Emotional Healing • Graphology" },
     ],
   },
