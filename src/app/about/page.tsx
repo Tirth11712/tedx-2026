@@ -20,7 +20,7 @@ export default function About() {
             <h1 className="about-title about-title--brand">
               About{" "}
               <Image
-                src="/brand/tedx-mark.svg?v=3"
+                src="/brand/tedx-mark.svg?v=4"
                 alt="TEDx"
                 width={252}
                 height={82}
@@ -46,7 +46,7 @@ export default function About() {
             <h2 className="about-title about-title--brand">
               About{" "}
               <Image
-                src="/brand/logo.svg?v=3"
+                src="/brand/logo.svg?v=4"
                 alt="TEDxSVIT"
                 width={490}
                 height={82}

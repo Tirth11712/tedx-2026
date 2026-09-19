@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="foot-word-wrap" aria-hidden="true">
-        <Image src="/brand/logo.svg" alt="TEDxSVIT" width={490} height={82} className="foot-logo" />
+        <Image src="/brand/logo.svg?v=4" alt="TEDxSVIT" width={490} height={82} className="foot-logo" />
       </div>
 
       <div className="footer-container">

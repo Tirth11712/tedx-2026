@@ -7,7 +7,7 @@
         fill: #EB0028;
       }
       .ted-x {
-        font-size: 56px;
+        font-size: 74px;
         font-weight: 900;
       }
       .svit-text {
@@ -18,6 +18,6 @@
       }
     </style>
   </defs>
-  <text x="0" y="70" class="ted-text" font-size="86">TED<tspan class="ted-x" dy="-26">x</tspan></text>
-  <text x="231" y="70" class="svit-text" font-size="86">SVIT</text>
+  <text x="0" y="70" class="ted-text" font-size="86">TED<tspan class="ted-x" dy="-23">x</tspan></text>
+  <text x="244" y="70" class="svit-text" font-size="86">SVIT</text>
 </svg>

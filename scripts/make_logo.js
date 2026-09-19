@@ -12,7 +12,7 @@ function generateSvg({ color = '#FFFFFF', tedColor = '#EB0028' } = {}) {
         fill: ${tedColor};
       }
       .ted-x {
-        font-size: 56px;
+        font-size: 74px;
         font-weight: 900;
       }
       .svit-text {
@@ -23,8 +23,8 @@ function generateSvg({ color = '#FFFFFF', tedColor = '#EB0028' } = {}) {
       }
     </style>
   </defs>
-  <text x="0" y="70" class="ted-text" font-size="86">TED<tspan class="ted-x" dy="-26">x</tspan></text>
-  <text x="231" y="70" class="svit-text" font-size="86">SVIT</text>
+  <text x="0" y="70" class="ted-text" font-size="86">TED<tspan class="ted-x" dy="-23">x</tspan></text>
+  <text x="244" y="70" class="svit-text" font-size="86">SVIT</text>
 </svg>`;
 }
 
@@ -38,12 +38,12 @@ function generateTedxOnlySvg({ tedColor = '#EB0028' } = {}) {
         fill: ${tedColor};
       }
       .ted-x {
-        font-size: 56px;
+        font-size: 74px;
         font-weight: 900;
       }
     </style>
   </defs>
-  <text x="0" y="70" class="ted-text" font-size="86">TED<tspan class="ted-x" dy="-26">x</tspan></text>
+  <text x="0" y="70" class="ted-text" font-size="86">TED<tspan class="ted-x" dy="-23">x</tspan></text>
 </svg>`;
 }
 
@@ -51,7 +51,6 @@ const logoSvg = generateSvg();
 const tedxSvg = generateTedxOnlySvg();
 
 fs.writeFileSync('public/brand/logo.svg', logoSvg);
-fs.writeFileSync('public/brand/footer-logo.svg', logoSvg);
 fs.writeFileSync('public/brand/tedx-mark.svg', tedxSvg);
 
 async function buildAssets() {
