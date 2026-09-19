@@ -34,7 +34,8 @@ export type CaptionFont =
   | "--font-kalam"
   | "--font-caveat"
   | "--font-gloria-hallelujah"
-  | "--font-schoolbell";
+  | "--font-schoolbell"
+  | "--font-just-another-hand";
 
 export interface GalleryItem {
   src: string;
@@ -92,5 +93,10 @@ export const galleryItems: GalleryItem[] = [
     caption: "Some conversations stay with you",
     captionFont: "--font-schoolbell",
   },
-  { src: "/gallery/event-09.webp", alt: "The full TEDxSVIT team and attendees gathered for a group photo outside the venue" },
+  {
+    src: "/gallery/event-09.webp",
+    alt: "The full TEDxSVIT team and attendees gathered for a group photo outside the venue",
+    caption: "What makes Tedx worth it",
+    captionFont: "--font-just-another-hand",
+  },
 ];
