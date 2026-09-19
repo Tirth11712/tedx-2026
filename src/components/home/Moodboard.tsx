@@ -17,7 +17,14 @@ export default function Moodboard({ items }: { items: GalleryItem[] }) {
               priority={i < 2}
             />
           </div>
-          {item.caption && <figcaption className="moodboard-caption">{item.caption}</figcaption>}
+          {item.caption && (
+            <figcaption
+              className="moodboard-caption"
+              style={item.captionFont ? { fontFamily: `var(${item.captionFont})` } : undefined}
+            >
+              {item.caption}
+            </figcaption>
+          )}
         </figure>
       ))}
     </div>
