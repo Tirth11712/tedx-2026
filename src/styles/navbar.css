@@ -41,7 +41,7 @@
 }
 
 .logo img {
-  height: 2.6rem;
+  height: 2.3rem;
   width: auto;
 }
 
@@ -118,7 +118,7 @@
   }
 
   .logo img {
-    height: 2.1rem;
+    height: 1.9rem;
   }
 
   .desktop-nav {
@@ -128,7 +128,7 @@
 
 @media (max-width: 480px) {
   .logo img {
-    height: 1.9rem;
+    height: 1.7rem;
   }
 }
 
