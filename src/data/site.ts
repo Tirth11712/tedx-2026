@@ -32,7 +32,8 @@ export type CaptionFont =
   | "--font-rock-salt"
   | "--font-permanent-marker"
   | "--font-kalam"
-  | "--font-caveat";
+  | "--font-caveat"
+  | "--font-gloria-hallelujah";
 
 export interface GalleryItem {
   src: string;
@@ -78,7 +79,12 @@ export const galleryItems: GalleryItem[] = [
     caption: "More than words on a stage",
     captionFont: "--font-caveat",
   },
-  { src: "/gallery/event-07.webp", alt: "Three dancers performing beside the illuminated TEDxSVIT sign" },
+  {
+    src: "/gallery/event-07.webp",
+    alt: "Three dancers performing beside the illuminated TEDxSVIT sign",
+    caption: "Graceful Begining",
+    captionFont: "--font-gloria-hallelujah",
+  },
   { src: "/gallery/event-08.webp", alt: "A speaker addressing the audience under a spotlight" },
   { src: "/gallery/event-09.webp", alt: "The full TEDxSVIT team and attendees gathered for a group photo outside the venue" },
 ];

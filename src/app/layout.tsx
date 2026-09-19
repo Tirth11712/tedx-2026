@@ -7,6 +7,7 @@ import {
   Permanent_Marker,
   Kalam,
   Caveat,
+  Gloria_Hallelujah,
 } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
@@ -60,6 +61,13 @@ const caveat = Caveat({
   variable: "--font-caveat",
 });
 
+const gloriaHallelujah = Gloria_Hallelujah({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-gloria-hallelujah",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "TEDxSVIT",
@@ -79,7 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable}`}
+      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable} ${gloriaHallelujah.variable}`}
     >
       <body>
         <SmoothScrollProvider>
