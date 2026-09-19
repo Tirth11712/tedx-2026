@@ -27,7 +27,7 @@ export default function Home() {
             </h1>
             <p className="heroTagline">It starts with one</p>
             <div className="addressText">
-              <p>September 10, 2026</p>
+              <p>October 10, 2026</p>
               <p>Architecture Auditorium SVIT Campus, Vasad</p>
             </div>
             <div className="getTicketBtn">
