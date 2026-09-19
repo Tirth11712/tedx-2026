@@ -32,7 +32,9 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
         lerp: 0.1,
         smoothWheel: true,
         syncTouch: true,
-        touchMultiplier: 1.5,
+        syncTouchLerp: 0.1,
+        touchInertiaExponent: 1.7,
+        touchMultiplier: 1,
         anchors: { offset: ANCHOR_OFFSET },
         autoRaf: true,
       }}
