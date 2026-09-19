@@ -5,6 +5,8 @@ export interface Speaker {
   tag: string;
   talk: string;
   img: string;
+  /** Tiny base64 blur placeholder shown while the real photo loads. */
+  blurDataURL?: string;
   desc: string;
   meta: { label: string; val: string }[];
   /** Edition year, set only for past speakers. */
@@ -64,6 +66,7 @@ export const speakers: Speaker[] = [
     tag: "College Life",
     talk: "College Life",
     img: "/team/core/kabir-brahmbhatt.webp",
+    blurDataURL: "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoMABAAA4BaJZQAApyr2XirEAD+o3wSRwcQHhnikxpYYnuXUuMN6vIj5Fy9K3R+c/PrYJN24c6+Jy5mcy0ahFk1+kQ/xjY404YD39S9wIuUCvvHC34Q1QFFAfAAAA==",
     desc: "TEDxSVIT's own Organiser, taking the stage to share his perspective on college life.",
     meta: [
       { label: "Topic", val: "College Life" },
@@ -82,6 +85,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Exploration",
     talk: "Pedaling Through Continents & Peaks",
     img: "/speakers/past/nisha-kumari.webp",
+    blurDataURL: "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoMAAwAA4BaJbACdADbFPAwAAD+6lTVG6gdLdWa2cqGL3uKH1b8YNgppEIZRawNpdWaJA8rhzw1QPWB+ciG8VO9BYvLbqFwQVmRZ+51r9aF5zgM0ByRQ4lg6zAAAA==",
     desc: "First woman from Vadodara to summit Mount Everest. Nisha Kumari rode approximately 16,697 km, crossing 15 countries over the course of 210 days. Cycled through India, Nepal, China, Kyrgyzstan, Uzbekistan, Kazakhstan, Russia, Latvia, Lithuania, Poland, Czech Republic, Germany, Netherlands, Belgium and France. Along the way, Nisha and her coach planted more than 1050 trees emphasising their message on environmental conservation and sustainability.",
     meta: [
       { label: "Everest Record", val: "1st Woman from Vadodara on Summit" },
@@ -97,6 +101,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Social Welfare",
     talk: "Voices For The Voiceless",
     img: "/speakers/past/bhargsetu-sharma.webp",
+    blurDataURL: "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQAgCdASoMAAwAA4BaJYgC7AYs3bHtfCdAAP5P8NPXzAfv2VzRnUqFL973ZcpP1UjRQVJJ+r5D/ftpxbaPMTjzSthdOcqP8jrGo1PO1Jik0DbS8R+aHFYOtrcVpAQAAAA=",
     desc: "Has rescued more than 5000 stray animals and birds. Awarded the Raksha Mantri Padak from the Defence Ministry in 2019 and the Governor's Medal at just age 20. Invited to MTV Roadies 2019 as a Real Hero.",
     meta: [
       { label: "Recognition", val: "Raksha Mantri Padak (2019)" },
@@ -112,6 +117,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Leadership",
     talk: "The Power of Purposeful Speech",
     img: "/speakers/past/vikrem-rajagopal.webp",
+    blurDataURL: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoMAAYAA4BaJaACdAECpkaZtoAA/skXSThUanW9uqa4mPkq+80crbD6KLAPCpAVUkRwNDHlDyAAAA==",
     desc: "17+ years of experience in Oil and Gas sector with industry giant L&T. 5x Winner of International Speech Contest at Club level in Toastmasters International, Winner of Evaluation Speech Contest at Division Level. Awarded Rising Star Award in Toastmasters (2021). Currently serving as President of Vadodara Toastmasters. Pursues his passion in public speaking despite a busy corporate life. Known for his impactful speeches with thought-provoking ideas.",
     meta: [
       { label: "Corporate", val: "17+ Years Leadership at L&T" },
@@ -127,6 +133,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Public Service",
     talk: "Duty, Law & Humanitarian Care",
     img: "/speakers/past/tarun-barot.webp",
+    blurDataURL: "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoMAAkAA4BaJYgCdAYpRzF3fxBoAADOPkvG20GPig5Wj2klP1ukcx39uhLhO4mNln1zlGxxpYTPtwcceyB/RgF/jz9nTDRGwWX9gAAA",
     desc: "Known as “encounter specialist”, Tarun is Gujarat Police's most talked-about officers for his high-profile cases that made national headlines. He played a major role in the arrest and encounter of underworld don and Dawood Ibrahim associate Abdul Latif - who later inspired Shah Rukh Khan’s movie Raees (2017). He led various high-profile encounters to bring down underworld gangs. Post retirement, Barot is deeply involved in social work and welfare of people. In COVID, he organised meals for 5000+ needy people for 75 consecutive days and distributed 1000+ ration kits. He has facilitated marriages of 10+ underprivileged women.",
     meta: [
       { label: "Service", val: "Dy. SP, Gujarat Police (Retd.)" },
@@ -144,6 +151,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Sports",
     talk: "Gujarat's First Professional MMA Fighter",
     img: "/speakers/past/ishika-thite.webp",
+    blurDataURL: "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBACdASoMABUAPu1iqU2ppaOiMAgBMB2JQBdgMYYcC0hDyzMX0+L4mEAA/t2h+9/DNFJ3aiAei9X0glLgCzhUrGW9QkpMPfRG4vlYUmkn8o0wtH3dXn6AwWqfQsOT2oODd6rmBOeXUoSNc3371wWRMGjz/UFu0tbH6jk+/pTAj0PdyWJNxThqMAA=",
     desc: "Gujarat's first professional MMA fighter and former national champion. Founder of The Dojo MMA & Fitness Gym, dedicated to training and empowering aspiring athletes.",
     meta: [
       { label: "Milestone", val: "Gujarat's First Professional MMA Fighter" },
@@ -159,6 +167,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Technology & Law",
     talk: "Cybersecurity & AI Law Expert",
     img: "/speakers/past/saakshar-duggal.webp",
+    blurDataURL: "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoMABAAA4BaJbACdAEOgrehQ7A4AM4/Y+kwt33A8feVhY/N5Hzg5Ng62l2utg+ySDHdzvt2AgvO1IYNDkhmuN/C7HaLNMtnMJ5rGrtNunurYccUra//zZAA",
     desc: "A cybersecurity and AI law expert with expertise at the intersection of technology, law, and digital security. A multiple-time TEDx speaker, sharing insights on emerging technologies and their impact on society.",
     meta: [
       { label: "Expertise", val: "Cybersecurity & AI Law" },
@@ -174,6 +183,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Personal Development",
     talk: "Motivational Speaker & Author",
     img: "/speakers/past/sanjay-raval.webp",
+    blurDataURL: "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoMAAwAA4BaJQBOgBukTPOoFzAA/vSOudZRhu0kziH3Od5jqKCw/d53R4OpFjZXlZRLZEn8qNAK/GwUKIAAAA==",
     desc: "A renowned Gujarati motivational speaker, author, entrepreneur, and philanthropist known for his work in personality development and fearless living.",
     meta: [
       { label: "Recognition", val: "Renowned Gujarati Motivational Speaker" },
@@ -189,6 +199,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Health & Resilience",
     talk: "Cancer Survivor & Global Speaker",
     img: "/speakers/past/shrenik-shah.webp",
+    blurDataURL: "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoMAAsAA4BaJYgCw7DZgmngAP70tK+3ohjHKP5i6P2/0FfC9N84GMliyDMb4i7Doh/ItcpHNNRHOXK5Jpu3AIKAAAA=",
     desc: "A stage IV vocal-cord cancer survivor, global speaker, and leadership voice. A Patient Ambassador with the Indian Cancer Society, he has delivered talks and worked extensively with cancer support communities worldwide.",
     meta: [
       { label: "Journey", val: "Stage IV Vocal-Cord Cancer Survivor" },
@@ -204,6 +215,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Startups & Investment",
     talk: "Investor & Entrepreneur",
     img: "/speakers/past/nikhil-parmar.webp",
+    blurDataURL: "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACQAQCdASoMAAgAA4BaJZwAAl07HJAA/lQ9qVS1ojUQo6JsENg6O/jTSj99KEublKP0qlHut/X3wAAA",
     desc: "An investor and entrepreneur with experience in startups, business strategy, and emerging ventures. Known for supporting promising ideas and working closely with founders to build and scale businesses.",
     meta: [
       { label: "Focus", val: "Startups & Business Strategy" },
@@ -219,6 +231,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Business Leadership",
     talk: "Senior Business Leader",
     img: "/speakers/past/krunal-brahmbhatt.webp",
+    blurDataURL: "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoMAAwAA4BaJYwCdAELzE4VbR4AAP7f/0w9uKRq6VDI5T1E95JKj+1ONxjisO2VFfKkfOreBtPZrp6/it4R2Q6Vcmg4LaHcY4o+gpdIF+U+AoPcWCvG6YAA",
     desc: "A senior business leader at Siemens Energy with over 25 years of professional experience in sales, business development, and strategic leadership.",
     meta: [
       { label: "Position", val: "Senior Leader, Siemens Energy" },
@@ -236,6 +249,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Social Advocacy",
     talk: "LGBTQ+ Rights Activist",
     img: "/speakers/past/manvendra-singh-gohil.webp",
+    blurDataURL: "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAwBACdASoMABMAPu1iqU2ppaQiMAgBMB2JQBOmUAS2onG0qWDK9scVuAAA/rlLpnY0NsbGlV/GEO4EPf5/45JAKxwBsrzhV3W/cLvUcIrUJbIoBai0F3DAT1o/EOuJEH6RIA4+rHjtDGndHMHdE/zfTBPBkSdUBQ/4fawA",
     desc: "Former Maharaja of Rajpipla and prominent LGBT activist advocating for LGBTQ+ rights and social acceptance. A public figure known for using personal experiences and public platforms to address inclusion and equality.",
     meta: [
       { label: "Heritage", val: "Former Maharaja of Rajpipla" },
@@ -251,6 +265,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Performing Arts",
     talk: "Theatre Artist & Filmmaker",
     img: "/speakers/past/aniket-pandya.webp",
+    blurDataURL: "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoMAAsAA4BaJbACdAEWmXxOp6XgAP7x3yStfEr2xpIHigdXIYGJ/yVmEPh8y2XsDP63WgvDDX2vDtImBdZvrQkpTwefSvt/sht2++sQAAA=",
     desc: "Theatre artist and founder of Aniradichita Films, working across theatre and independent filmmaking. Known for creative storytelling and contributions to the performing arts and film space.",
     meta: [
       { label: "Founder", val: "Aniradichita Films" },
@@ -266,6 +281,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Entrepreneurship",
     talk: "Entrepreneur & Shark Tank India Founder",
     img: "/speakers/past/saurabh-mangrulkar.webp",
+    blurDataURL: "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoMAA0AA4BaJZQCw7EWmDXABfHgAP7wOPIn9h/7Q7APjgPTo80bmiI3FN0BEriO8aUc1xsRtkZ/tRYb8BTFKpOyZnyDLunFJivgS+dmO7axjAAA",
     desc: "Entrepreneur and founder of EventBeep, a platform focused on student communities, events, and opportunities. Featured on Shark Tank India for the EventBeep venture.",
     meta: [
       { label: "Founder", val: "EventBeep" },
@@ -281,6 +297,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Media & Entertainment",
     talk: "Radio Jockey",
     img: "/speakers/past/rj-mohini.webp",
+    blurDataURL: "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAgCdASoMAA8AA4BaJaACdAECpX0z2WSWfCgA/gt9HzoDz73dpyItyGRS7SD8PJbcWVP12nJgxnqK+oJ6/shOMEq4CIYYByd1so41F3VNhOzjqIVHtTftVNE3zWNTo6K2+M6S0ZgAAA==",
     desc: "Radio Jockey, known for engaging audiences through radio entertainment, conversations, and on-air content. A familiar voice in radio with a career centred around communication and audience engagement.",
     meta: [
       { label: "Craft", val: "Radio Jockey" },
@@ -296,6 +313,7 @@ export const pastSpeakers: Speaker[] = [
     tag: "Psychology",
     talk: "Criminal Psychologist",
     img: "/speakers/past/mahesh-tripathi.webp",
+    blurDataURL: "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABwAgCdASoMAAwAA4BaJbACdAYvX2WOfPKZS5jAAP7we4WjY/zYZhi4pzCG18AvB3HeN7vwWskqTHjpSNi/tXcgWV4Fns3K8Lk4jQNOOCDkb4bJ76nxG5neAwK+caZWfhOIAAAA",
     desc: "Criminal psychologist specialising in the study of criminal behaviour, psychology, and related social factors. A professional voice in understanding the psychological dimensions of crime and human behaviour.",
     meta: [
       { label: "Specialisation", val: "Criminal Behaviour & Psychology" },
