@@ -31,15 +31,16 @@ export const speakers: Speaker[] = [
   {
     id: "2026-02",
     name: "Urmi Mehta",
-    role: "Psychologist",
-    tag: "Psychology",
-    talk: "Psychologist",
+    role: "Author, Therapist & Counsellor",
+    tag: "Wellness | Author & Therapist",
+    talk: "Healing Through Words and Energy",
     img: "/speakers/placeholder.svg",
-    desc: "A psychologist joining the TEDxSVIT 2026 stage to share insights from their field.",
+    desc: "Urmi Sanghavi Mehta started her journey into the healing world with hypnotherapy and never looked back. Initially writing as a form of personal expression, her work evolved into the novel Fatal Love - A Love Undone. The book sheds light on the importance of emotions and explores the complexity of human emotions using fiction and suspense, leaving readers with immense love and hope for self. As a professional hypnotherapist, counsellor, and full-time mother with over 6 years in the field of behavior analysis, she uses her unique perspective on everyday life to breathe raw emotion into her characters. She actively teaches and practices a wide variety of healing modalities, including graphology—which serves as a fun and engaging tool to test and explore different sides of a personality. She believes that the intention with which you start something is what you get at the end of it.",
     meta: [
-      { label: "Focus", val: "Psychology" },
-      { label: "Edition", val: "TEDxSVIT 2026" },
-      { label: "Bio", val: "Full Details Coming Soon" },
+      { label: "Wellness", val: "Professional Hypnotherapist & Counsellor" },
+      { label: "Journey", val: "From Personal Expression to Published Author & Full-Time Mother" },
+      { label: "Expertise", val: "6+ years of experience" },
+      { label: "Key Themes", val: "Complex Emotions • Suspense Fiction • Emotional Healing • Graphology" },
     ],
   },
   {
