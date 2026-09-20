@@ -1,7 +1,7 @@
 {
   "rippleEffect": false,
   "media": {
-    "logo": "/brand/logo-wordmark.webp",
+    "logo": "/brand/logo-wordmark.webp?v=2",
     "tedxMark": "/brand/tedx-mark.svg?v=4",
     "heroVideo": "/media/hero-desktop.mp4",
     "heroPoster": "/media/fallback.webp",

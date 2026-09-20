@@ -19,7 +19,7 @@ export default function Navbar() {
       <GlassSurface width="100%" height="100%" borderRadius={24} className="glassNavbarContainer">
         <nav className="navbar-content" aria-label="Main">
           <Link href="/" className="logo" aria-label="TEDxSVIT home">
-            <Image src={config.media.logo} alt="TEDxSVIT" width={980} height={283} priority />
+            <Image src={config.media.logo} alt="TEDxSVIT" width={980} height={158} priority />
           </Link>
 
           <div className="nav-links desktop-nav">

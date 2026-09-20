@@ -67,6 +67,12 @@
   vertical-align: middle;
 }
 
+/* The new wordmark PNG's ink fills ~99% of its box (vs the old SVG's ~75%),
+   so it needs a smaller em-height to visually match the "About" text's cap-height. */
+.about-brand-logo--wordmark {
+  height: 0.76em;
+}
+
 /* ============ BODY TEXT ============ */
 
 .about-body {

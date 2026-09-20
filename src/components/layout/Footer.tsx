@@ -17,7 +17,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="foot-word-wrap">
         <Link href="/" aria-label="TEDxSVIT home">
-          <Image src={config.media.logo} alt="TEDxSVIT" width={980} height={283} className="foot-logo" />
+          <Image src={config.media.logo} alt="TEDxSVIT" width={980} height={158} className="foot-logo" />
         </Link>
       </div>
 
