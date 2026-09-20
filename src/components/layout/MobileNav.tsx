@@ -52,7 +52,7 @@ export default function MobileNav({
         data-lenis-prevent
       >
         <div className="mobile-nav-header">
-          <Image src={config.media.logo} alt="TEDxSVIT" width={171} height={29} className="mobile-logo" />
+          <Image src={config.media.logo} alt="TEDxSVIT" width={980} height={283} className="mobile-logo" />
           <button type="button" className="mobile-close-btn" onClick={onClose} aria-label="Close menu">
             ✕
           </button>

@@ -51,8 +51,8 @@ export default function About() {
               <Image
                 src={config.media.logo}
                 alt="TEDxSVIT"
-                width={490}
-                height={82}
+                width={980}
+                height={283}
                 className="about-brand-logo"
               />
             </h2>
