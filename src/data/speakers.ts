@@ -17,7 +17,7 @@ export interface Speaker {
 export const speakers: Speaker[] = [
   {
     id: "2026-01",
-    name: "Tushar Sanghvi",
+    name: "Tushar Sanghavi",
     role: "Chairman, Silkflex India Limited",
     tag: "Business | Entrepreneurship",
     talk: "A Journey of Curiosity, Courage, and Conviction",
