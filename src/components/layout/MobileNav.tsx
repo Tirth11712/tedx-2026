@@ -5,6 +5,7 @@ import Link from "next/link";
 import { navLinks, ticketsHref } from "@/data/site";
 import { useEscapeKey, useScrollLock } from "@/hooks/overlay";
 import "@/styles/mobile-nav.css";
+import config from "@/config.json";
 
 export function MobileNavTrigger({
   isOpen,
@@ -51,7 +52,7 @@ export default function MobileNav({
         data-lenis-prevent
       >
         <div className="mobile-nav-header">
-          <Image src="/brand/logo.svg?v=4" alt="TEDxSVIT" width={171} height={29} className="mobile-logo" />
+          <Image src={config.media.logo} alt="TEDxSVIT" width={171} height={29} className="mobile-logo" />
           <button type="button" className="mobile-close-btn" onClick={onClose} aria-label="Close menu">
             ✕
           </button>

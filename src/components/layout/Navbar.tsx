@@ -7,6 +7,7 @@ import GlassSurface from "@/components/ui/GlassSurface";
 import MobileNav, { MobileNavTrigger } from "./MobileNav";
 import { navLinks, ticketsHref } from "@/data/site";
 import "@/styles/navbar.css";
+import config from "@/config.json";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function Navbar() {
       <GlassSurface width="100%" height="100%" borderRadius={24} className="glassNavbarContainer">
         <nav className="navbar-content" aria-label="Main">
           <Link href="/" className="logo" aria-label="TEDxSVIT home">
-            <Image src="/brand/logo.svg?v=4" alt="TEDxSVIT" width={490} height={82} priority />
+            <Image src={config.media.logo} alt="TEDxSVIT" width={490} height={82} priority />
           </Link>
 
           <div className="nav-links desktop-nav">

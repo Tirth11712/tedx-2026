@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import type { Speaker } from "@/data/speakers";
 import Footer from "@/components/layout/Footer";
+import PageBackdrop from "@/components/ui/PageBackdrop";
 import { pastSpeakers, speakers } from "@/data/speakers";
 import { useEscapeKey, useScrollLock } from "@/hooks/overlay";
 import "@/styles/speaker.css";
@@ -123,6 +124,7 @@ export default function SpeakerPage() {
 
   return (
     <div className="speaker-page-root">
+      <PageBackdrop />
       <div className="speaker-bg-lines" aria-hidden="true">
         <i />
         <i />

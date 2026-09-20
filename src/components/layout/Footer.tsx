@@ -3,6 +3,7 @@ import Link from "next/link";
 import BackToTopButton from "./BackToTopButton";
 import { navLinks, socialLinks, ticketsHref } from "@/data/site";
 import "@/styles/footer.css";
+import config from "@/config.json";
 
 const exploreLinks = [
   { href: "/#gallery", label: "Gallery & Moments" },
@@ -16,7 +17,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="foot-word-wrap">
         <Link href="/" aria-label="TEDxSVIT home">
-          <Image src="/brand/logo.svg?v=4" alt="TEDxSVIT" width={490} height={82} className="foot-logo" />
+          <Image src={config.media.logo} alt="TEDxSVIT" width={490} height={82} className="foot-logo" />
         </Link>
       </div>
 
