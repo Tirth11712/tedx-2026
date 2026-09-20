@@ -78,6 +78,32 @@ export const speakers: Speaker[] = [
       },
     ],
   },
+  {
+    id: "2026-05",
+    name: "Revealing Soon",
+    role: "Speaker",
+    tag: "Coming Soon",
+    talk: "Revealing Soon",
+    img: "/speakers/placeholder.svg",
+    desc: "Details for this TEDxSVIT 2026 speaker are being finalized and will be revealed soon.",
+    meta: [
+      { label: "Edition", val: "TEDxSVIT 2026" },
+      { label: "Bio", val: "Full Details Coming Soon" },
+    ],
+  },
+  {
+    id: "2026-06",
+    name: "Revealing Soon",
+    role: "Speaker",
+    tag: "Coming Soon",
+    talk: "Revealing Soon",
+    img: "/speakers/placeholder.svg",
+    desc: "Details for this TEDxSVIT 2026 speaker are being finalized and will be revealed soon.",
+    meta: [
+      { label: "Edition", val: "TEDxSVIT 2026" },
+      { label: "Bio", val: "Full Details Coming Soon" },
+    ],
+  },
 ];
 
 export const pastSpeakers: Speaker[] = [
