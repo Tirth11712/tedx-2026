@@ -10,8 +10,7 @@ import {
   Gloria_Hallelujah,
   Schoolbell,
   Just_Another_Hand,
-  Playfair_Display,
-  Fraunces,
+  Cormorant_Garamond,
 } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
@@ -86,20 +85,12 @@ const justAnotherHand = Just_Another_Hand({
   variable: "--font-just-another-hand",
 });
 
-const playfairDisplay = Playfair_Display({
+const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: ["500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
-  variable: "--font-playfair",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["600"],
-  style: ["italic"],
-  display: "swap",
-  variable: "--font-fraunces",
+  variable: "--font-cormorant",
 });
 
 export const metadata: Metadata = {
@@ -121,7 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable} ${gloriaHallelujah.variable} ${schoolbell.variable} ${justAnotherHand.variable} ${playfairDisplay.variable} ${fraunces.variable}`}
+      className={`${hostGrotesk.variable} ${coveredByYourGrace.variable} ${patrickHandSC.variable} ${rockSalt.variable} ${permanentMarker.variable} ${kalam.variable} ${caveat.variable} ${gloriaHallelujah.variable} ${schoolbell.variable} ${justAnotherHand.variable} ${cormorantGaramond.variable}`}
     >
       <body>
         <SmoothScrollProvider>
