@@ -21,7 +21,7 @@ export const speakers: Speaker[] = [
     role: "Chairman, Silkflex India Limited",
     tag: "Business | Entrepreneurship",
     talk: "A Journey of Curiosity, Courage, and Conviction",
-    img: "/speakers/placeholder.svg",
+    img: "/speakers/current/tushar-sanghvi.webp",
     desc: "Tushar Sanghavi's journey is a story of curiosity, courage, and entrepreneurship. Starting from a simple sales job while managing financial challenges, he identified an opportunity to bring an international brand to India and eventually built Silkflex India Limited into a successful enterprise. After years of importing and distributing products, he is now moving toward manufacturing in Gujarat, turning an opportunity into a lasting legacy and inspiring students to look beyond conventional career paths.",
     meta: [
       { label: "Business", val: "Chairman, Silkflex India Limited" },
