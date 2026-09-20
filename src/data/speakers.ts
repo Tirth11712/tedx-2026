@@ -36,7 +36,7 @@ export const speakers: Speaker[] = [
     role: "Author, Therapist & Counsellor",
     tag: "Wellness | Author & Therapist",
     talk: "Healing Through Words and Energy",
-    img: "/speakers/placeholder.svg",
+    img: "/speakers/current/urmi-mehta.webp",
     desc: "Urmi Mehta is an experienced energy healing practitioner and teacher specializing in hypnotherapy, graphology, numerology, and other healing modalities. With 9 years of experience, she helps people explore emotions, self-awareness, and inner transformation. She is also the author of Fatal Love – A Love Undone, a mystery exploring the complexities of human emotions. A dedicated mother and lifelong learner, Urmi believes that the intention behind every beginning shapes its outcome.",
     meta: [
       { label: "Wellness", val: "Professional Hypnotherapist & Counsellor" },
@@ -65,7 +65,7 @@ export const speakers: Speaker[] = [
     role: "Engineering Student & PR Leader",
     tag: "Student Leadership | Communications",
     talk: "Finding Your Signal Amid the Noise",
-    img: "/team/core/kabir-brahmbhatt.webp",
+    img: "/speakers/current/kabir-brahmbhatt.webp",
     blurDataURL: "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoMABAAA4BaJZQAApyr2XirEAD+o3wSRwcQHhnikxpYYnuXUuMN6vIj5Fy9K3R+c/PrYJN24c6+Jy5mcy0ahFk1+kQ/xjY404YD39S9wIuUCvvHC34Q1QFFAfAAAA==",
     desc: "Kabir Brahmbhatt is an engineering student who has spent his college years exploring spaces far beyond his academic path. He was selected to the TEDx core team in his first year itself, and went on to organize two consecutive TEDx events, gaining experience in leadership, communication, and community building. At just 18, he was elected as one of the youngest Vice Presidents of Public Relations in Toastmasters, and at 19, was invited to join the District PR team. His experiences across leadership roles, public speaking, design, and photography have given him a perspective on what it means to find direction in a world full of possibilities. Having navigated academic setbacks and uncertainties along the way, Kabir explores the distractions and expectations that shape young adults today, and the importance of learning to find your own signal amid all the noise.",
     meta: [
