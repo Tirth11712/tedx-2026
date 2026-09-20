@@ -26,7 +26,7 @@ export const speakers: Speaker[] = [
     meta: [
       { label: "Business", val: "Chairman, Silkflex India Limited" },
       { label: "Journey", val: "From Sales Professional to Entrepreneur & Industry Leader" },
-      { label: "Expertise", val: "20+ years of industrial experience" },
+      { label: "Expertise", val: "40+ years of industrial experience" },
       { label: "Key Themes", val: "Entrepreneurship • Business Expansion • Manufacturing • Strategic Growth" },
     ],
   },
