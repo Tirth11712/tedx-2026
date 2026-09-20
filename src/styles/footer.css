@@ -37,7 +37,7 @@
 }
 
 .foot-logo {
-  height: clamp(44px, 10vw, 140px);
+  height: clamp(52px, 12vw, 170px);
   width: auto;
   max-width: 92%;
   display: block;
