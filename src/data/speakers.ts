@@ -62,16 +62,20 @@ export const speakers: Speaker[] = [
   {
     id: "2026-04",
     name: "Kabir Brahmbhatt",
-    role: "TEDxSVIT Organiser",
-    tag: "College Life",
-    talk: "College Life",
+    role: "Engineering Student & PR Leader",
+    tag: "Student Leadership | Communications",
+    talk: "Finding Your Signal Amid the Noise",
     img: "/team/core/kabir-brahmbhatt.webp",
     blurDataURL: "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoMABAAA4BaJZQAApyr2XirEAD+o3wSRwcQHhnikxpYYnuXUuMN6vIj5Fy9K3R+c/PrYJN24c6+Jy5mcy0ahFk1+kQ/xjY404YD39S9wIuUCvvHC34Q1QFFAfAAAA==",
-    desc: "TEDxSVIT's own Organiser, taking the stage to share his perspective on college life.",
+    desc: "Kabir Brahmbhatt is an engineering student who has spent his college years exploring spaces far beyond his academic path. He was selected to the TEDx core team in his first year itself, and went on to organize two consecutive TEDx events, gaining experience in leadership, communication, and community building. At just 18, he was elected as one of the youngest Vice Presidents of Public Relations in Toastmasters, and at 19, was invited to join the District PR team. His experiences across leadership roles, public speaking, design, and photography have given him a perspective on what it means to find direction in a world full of possibilities. Having navigated academic setbacks and uncertainties along the way, Kabir explores the distractions and expectations that shape young adults today, and the importance of learning to find your own signal amid all the noise.",
     meta: [
-      { label: "Topic", val: "College Life" },
-      { label: "Role", val: "TEDxSVIT Organiser" },
-      { label: "Edition", val: "TEDxSVIT 2026" },
+      { label: "Role", val: "Engineering Student" },
+      { label: "Journey", val: "From Academic Uncertainties to Youth Leadership & Community Building" },
+      { label: "Expertise", val: "2 Consecutive Years Organizer of TEDx at SVIT" },
+      {
+        label: "Key Themes",
+        val: "Youth Leadership • Public Relations & Communication • Community Building • Finding Purpose & Direction",
+      },
     ],
   },
 ];
