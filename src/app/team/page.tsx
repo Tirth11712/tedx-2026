@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/layout/Footer";
 import PageBackdrop from "@/components/ui/PageBackdrop";
+import MemberCard from "@/components/team/MemberCard";
 import { ticketsHref } from "@/data/site";
 import { departments } from "@/data/team";
 import "@/styles/team.css";
@@ -54,30 +54,7 @@ export default function TeamPage() {
 
                 <div className={isCore ? "core-grid" : "m-grid"}>
                   {dept.members.map((member) => (
-                    <article className="member" key={member.photo}>
-                      <div className="m-top">
-                        <Image
-                          src={member.photo}
-                          alt={member.name}
-                          fill
-                          sizes={
-                            isCore
-                              ? "(max-width: 640px) 100vw, (max-width: 900px) 50vw, 25vw"
-                              : "(max-width: 420px) 100vw, (max-width: 900px) 50vw, 20vw"
-                          }
-                          className="m-photo"
-                        />
-
-                        <svg className="m-x" viewBox="0 0 12 12" aria-hidden="true">
-                          <path d="M1 1 L11 11 M11 1 L1 11" stroke="currentColor" strokeWidth="2" />
-                        </svg>
-                      </div>
-
-                      <div className="m-body">
-                        <h3 className="m-name">{member.name}</h3>
-                        <p className="m-role">{member.role}</p>
-                      </div>
-                    </article>
+                    <MemberCard member={member} isCore={isCore} key={member.photo} />
                   ))}
                 </div>
               </div>

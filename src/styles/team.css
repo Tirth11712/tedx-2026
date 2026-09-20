@@ -163,6 +163,7 @@
   background: var(--ink-2);
   overflow: hidden;
   isolation: isolate;
+  cursor: pointer;
   transition: background 0.4s var(--ease);
 }
 
@@ -178,7 +179,8 @@
   transition: transform 0.45s var(--ease);
 }
 
-.member:hover::before {
+.member:hover::before,
+.member.is-active::before {
   transform: translateY(0);
 }
 
@@ -202,7 +204,8 @@
   transition: filter 0.45s ease, transform 0.6s var(--ease);
 }
 
-.member:hover .m-photo {
+.member:hover .m-photo,
+.member.is-active .m-photo {
   filter: grayscale(0) contrast(1.05);
   transform: scale(1.05);
 }
@@ -219,7 +222,8 @@
   transition: opacity 0.3s ease, color 0.3s ease, transform 0.4s var(--ease);
 }
 
-.member:hover .m-x {
+.member:hover .m-x,
+.member.is-active .m-x {
   opacity: 1;
   color: #fff;
   transform: rotate(90deg);
@@ -251,11 +255,13 @@
   transition: color 0.3s ease;
 }
 
-.member:hover .m-name {
+.member:hover .m-name,
+.member.is-active .m-name {
   color: #fff;
 }
 
-.member:hover .m-role {
+.member:hover .m-role,
+.member.is-active .m-role {
   color: rgba(255, 255, 255, 0.88);
 }
 
@@ -287,7 +293,8 @@
   font-weight: 700;
 }
 
-.core-grid .member:hover .m-role {
+.core-grid .member:hover .m-role,
+.core-grid .member.is-active .m-role {
   color: rgba(255, 255, 255, 0.92);
 }
 
