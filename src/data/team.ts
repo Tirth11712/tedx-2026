@@ -21,8 +21,21 @@ const member = (dept: string, slug: string, name: string, role: string): TeamMem
 
 export const departments: Department[] = [
   {
-    id: "website",
+    id: "core-team",
     num: "01",
+    theme: "dark",
+    heading: "CORE",
+    headingEm: "TEAM.",
+    members: [
+      { name: "Core Member 1", role: "Role One", photo: "/team/core/placeholder.svg" },
+      { name: "Core Member 2", role: "Role Two", photo: "/team/core/placeholder.svg" },
+      { name: "Core Member 3", role: "Role Three", photo: "/team/core/placeholder.svg" },
+      { name: "Core Member 4", role: "Role Four", photo: "/team/core/placeholder.svg" },
+    ],
+  },
+  {
+    id: "website",
+    num: "02",
     theme: "paper",
     heading: "WEBSITE",
     headingEm: "TEAM.",
@@ -34,7 +47,7 @@ export const departments: Department[] = [
   },
   {
     id: "admin-logistics",
-    num: "02",
+    num: "03",
     theme: "dark",
     heading: "ADMIN & LOGISTICS",
     headingEm: "TEAM.",
@@ -51,7 +64,7 @@ export const departments: Department[] = [
   },
   {
     id: "design",
-    num: "03",
+    num: "04",
     theme: "paper",
     heading: "GRAPHIC DESIGN",
     headingEm: "TEAM",
@@ -64,7 +77,7 @@ export const departments: Department[] = [
   },
   {
     id: "videography",
-    num: "04",
+    num: "05",
     theme: "dark",
     heading: "VIDEOGRAPHY",
     headingEm: "TEAM",
@@ -77,7 +90,7 @@ export const departments: Department[] = [
   },
   {
     id: "editing",
-    num: "05",
+    num: "06",
     theme: "paper",
     heading: "VIDEO EDITING",
     headingEm: "TEAM",
@@ -89,7 +102,7 @@ export const departments: Department[] = [
   },
   {
     id: "anchoring",
-    num: "06",
+    num: "07",
     theme: "dark",
     heading: "ANCHORING",
     headingEm: "TEAM",
@@ -101,7 +114,7 @@ export const departments: Department[] = [
   },
   {
     id: "dance",
-    num: "07",
+    num: "08",
     theme: "paper",
     heading: "DANCE",
     headingEm: "TEAM",
@@ -113,7 +126,7 @@ export const departments: Department[] = [
   },
   {
     id: "music",
-    num: "08",
+    num: "09",
     theme: "dark",
     heading: "MUSIC",
     headingEm: "TEAM",

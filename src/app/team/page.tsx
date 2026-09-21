@@ -54,7 +54,7 @@ export default function TeamPage() {
 
                 <div className={isCore ? "core-grid" : "m-grid"}>
                   {dept.members.map((member) => (
-                    <MemberCard member={member} isCore={isCore} key={member.photo} />
+                    <MemberCard member={member} isCore={isCore} key={`${member.name}-${member.photo}`} />
                   ))}
                 </div>
               </div>
