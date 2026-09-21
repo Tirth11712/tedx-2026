@@ -17,6 +17,7 @@
 
 .globalRippleVideo {
   object-fit: cover;
+  object-position: center center;
 }
 
 /* Hidden until it has a real distorted frame; the plain video underneath is the fallback. */

@@ -158,11 +158,42 @@ export default function HeroRippleVideo({
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
+
+    video.defaultMuted = true
+    video.muted = true
+
     const prefersReducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches
-    if (!prefersReducedMotion) {
-      video.play().catch(() => {})
+
+    const tryPlay = () => {
+      if (!prefersReducedMotion && video.paused) {
+        video.play().catch(() => {})
+      }
+    }
+
+    tryPlay()
+
+    const onUserInteraction = () => {
+      tryPlay()
+      if (!video.paused) {
+        window.removeEventListener('touchstart', onUserInteraction)
+        window.removeEventListener('touchend', onUserInteraction)
+        window.removeEventListener('click', onUserInteraction)
+        window.removeEventListener('scroll', onUserInteraction)
+      }
+    }
+
+    window.addEventListener('touchstart', onUserInteraction, { passive: true })
+    window.addEventListener('touchend', onUserInteraction, { passive: true })
+    window.addEventListener('click', onUserInteraction, { passive: true })
+    window.addEventListener('scroll', onUserInteraction, { passive: true })
+
+    return () => {
+      window.removeEventListener('touchstart', onUserInteraction)
+      window.removeEventListener('touchend', onUserInteraction)
+      window.removeEventListener('click', onUserInteraction)
+      window.removeEventListener('scroll', onUserInteraction)
     }
   }, [])
 
@@ -600,6 +631,7 @@ export default function HeroRippleVideo({
         className={videoClassName}
         src={config.media.heroVideo}
         poster={config.media.heroPoster}
+        autoPlay
         muted
         loop
         playsInline
