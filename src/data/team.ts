@@ -28,7 +28,7 @@ export const departments: Department[] = [
     headingEm: "TEAM.",
     members: [
       { name: "Vipra Dave", role: "Organiser", photo: "/team/core/vipra-dave.webp" },
-      { name: "Krish Patel", role: "Co-organiser", photo: "/team/core/placeholder.svg" },
+      { name: "Krish Patel", role: "Co-organiser", photo: "/team/core/krish-patel.webp" },
       { name: "Miraj Mistry", role: "Chief Coordinator", photo: "/team/core/placeholder.svg" },
       { name: "Khushi Patel", role: "Chief Coordinator", photo: "/team/core/placeholder.svg" },
     ],
