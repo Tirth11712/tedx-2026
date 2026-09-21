@@ -66,7 +66,7 @@ export default function TeamPage() {
           <div className="wrap">
             <div>
               <h2>Now meet the audience — that&apos;s you.</h2>
-              <p>43 of us built it. The last piece is you in a seat.</p>
+              <p>{departments.reduce((sum, d) => sum + d.members.length, 0)} of us built it. The last piece is you in a seat.</p>
             </div>
             <Link className="team-cta-btn" href={ticketsHref}>
               Get tickets <span aria-hidden="true">→</span>
