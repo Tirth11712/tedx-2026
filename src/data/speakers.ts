@@ -51,7 +51,7 @@ export const speakers: Speaker[] = [
     role: "Strength & Conditioning Coach",
     tag: "Sports | Strength & Conditioning",
     talk: "Elevating Elite Cricketing Fitness",
-    img: "/speakers/placeholder.svg",
+    img: "/speakers/current/shahbaj-mansuri.webp",
     desc: "A professional cricket Strength & Conditioning Coach associated with BCA and CAM, with experience as a trainer for the India U-19 national cricket team. He specializes in youth athletic development, fitness testing, endurance, injury prevention, and customized training programs to enhance players' performance and durability.",
     meta: [
       { label: "Domestic Associations", val: "Baroda Cricket Association, Mizoram Cricket Association" },
