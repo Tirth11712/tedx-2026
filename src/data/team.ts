@@ -27,10 +27,10 @@ export const departments: Department[] = [
     heading: "CORE",
     headingEm: "TEAM.",
     members: [
-      { name: "Core Member 1", role: "Role One", photo: "/team/core/placeholder.svg" },
-      { name: "Core Member 2", role: "Role Two", photo: "/team/core/placeholder.svg" },
-      { name: "Core Member 3", role: "Role Three", photo: "/team/core/placeholder.svg" },
-      { name: "Core Member 4", role: "Role Four", photo: "/team/core/placeholder.svg" },
+      { name: "Vipra Dave", role: "Organiser", photo: "/team/core/placeholder.svg" },
+      { name: "Krish Patel", role: "Co-organiser", photo: "/team/core/placeholder.svg" },
+      { name: "Miraj Mistry", role: "Chief Coordinator", photo: "/team/core/placeholder.svg" },
+      { name: "Khushi Patel", role: "Chief Coordinator", photo: "/team/core/placeholder.svg" },
     ],
   },
   {
