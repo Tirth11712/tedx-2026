@@ -19,6 +19,9 @@ const member = (dept: string, slug: string, name: string, role: string): TeamMem
   photo: `/team/${dept}/${slug}.webp`,
 });
 
+// Shown until a member's photo is added to public/team/core/<slug>.webp
+const CORE_PLACEHOLDER = "/team/core/placeholder.svg";
+
 export const departments: Department[] = [
   {
     id: "core-team",
@@ -27,10 +30,10 @@ export const departments: Department[] = [
     heading: "CORE",
     headingEm: "TEAM.",
     members: [
-      { name: "Vipra Dave", role: "Organiser", photo: "/team/core/vipra-dave.webp" },
-      { name: "Krish Patel", role: "Co-organiser", photo: "/team/core/krish-patel.webp" },
-      { name: "Miraj Mistry", role: "Chief Coordinator", photo: "/team/core/placeholder.svg" },
-      { name: "Khushi Patel", role: "Chief Coordinator", photo: "/team/core/placeholder.svg" },
+      member("core", "vipra-dave", "Vipra Dave", "Organiser"),
+      member("core", "krish-patel", "Krish Patel", "Co-organiser"),
+      { name: "Miraj Mistry", role: "Chief Coordinator", photo: CORE_PLACEHOLDER },
+      { name: "Khushi Patel", role: "Chief Coordinator", photo: CORE_PLACEHOLDER },
     ],
   },
   {
