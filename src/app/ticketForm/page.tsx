@@ -6,9 +6,7 @@ import PageBackdrop from "@/components/ui/PageBackdrop";
 import { useEscapeKey, useScrollLock } from "@/hooks/overlay";
 import "@/styles/tickets.css";
 
-const googleFormUrl =
-  process.env.NEXT_PUBLIC_GOOGLE_FORM_URL ||
-  "https://docs.google.com/forms/d/e/1FAIpQLSc_PLACEHOLDER_GOOGLE_FORM/viewform";
+const googleFormUrl = process.env.NEXT_PUBLIC_GOOGLE_FORM_URL || "https://forms.gle/sv7h8dzKoGMFzZcR9";
 
 const ticketCode = "TXSV·2026·PASS";
 const venue = "Architecture Auditorium, SVIT Campus, Vasad";
