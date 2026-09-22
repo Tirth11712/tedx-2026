@@ -41,7 +41,7 @@ export const departments: Department[] = [
     headingEm: "TEAM.",
     members: [
       member("website", "jwalin-patel", "Jwalin Patel", "Website"),
-      member("website", "tirth", "Tirth", "Website"),
+      member("website", "tirth", "Tirth Rana", "Website"),
       member("website", "param", "Param", "Website"),
     ],
   },
