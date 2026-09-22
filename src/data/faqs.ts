@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: "What is TEDxSVIT?",
     answer:
-      "TEDxSVIT is an independently organized TEDx event hosted at Sardar Vallabhbhai Patel Institute of Technology (SVIT). It brings together visionary speakers and thought leaders to share “ideas worth spreading” with our campus and broader community.",
+      "TEDxSVIT is an independently organized TEDx event hosted at Sardar Vallabhbhai Patel Institute of Technology (SVIT). It brings together visionary speakers and thought leaders to share “ideas change everything” with our campus and broader community.",
   },
   {
     question: "How is TEDxSVIT different from a TED Talk?",

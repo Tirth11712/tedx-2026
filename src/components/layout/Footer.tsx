@@ -29,7 +29,7 @@ export default function Footer() {
               <span>Edition</span>
             </div>
             <p className="fc-brand-desc">
-              TEDxSVIT — Ideas Worth Spreading. An independently organized TEDx event powered
+              TEDxSVIT — Ideas Change Everything. An independently organized TEDx event powered
               entirely by the student community of SVIT.
             </p>
             <div className="fc-pill-badge">
