@@ -11,6 +11,7 @@ const googleFormUrl =
   "https://docs.google.com/forms/d/e/1FAIpQLScr9i1ma0zsluz8YcHl57UCWCfW2tF1Mp0STnSNK-QmNq0-iw/viewform";
 
 const ticketCode = "TXSV·2026·PASS";
+const eventDate = "October 10, 2026";
 const venue = "Architecture Auditorium, SVIT Campus, Vasad";
 
 export default function TicketFormPage() {
@@ -39,7 +40,7 @@ export default function TicketFormPage() {
             <div className="ticket-rows">
               <div className="ticket-row">
                 <span className="t-k">Date</span>
-                <span className="t-v">TBA</span>
+                <span className="t-v">{eventDate}</span>
               </div>
               <div className="ticket-row">
                 <span className="t-k">Doors</span>
@@ -103,7 +104,7 @@ export default function TicketFormPage() {
                 </div>
                 <div className="gf-pass-row">
                   <span>Date:</span>
-                  <b>TBA</b>
+                  <b>{eventDate}</b>
                 </div>
                 <div className="gf-pass-row">
                   <span>Venue:</span>
