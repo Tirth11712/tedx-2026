@@ -44,7 +44,7 @@ export default function TicketFormPage() {
               </div>
               <div className="ticket-row">
                 <span className="t-k">Doors</span>
-                <span className="t-v">08:00 IST</span>
+                <span className="t-v">10:30 AM IST</span>
               </div>
               <div className="ticket-row">
                 <span className="t-k">Venue</span>
