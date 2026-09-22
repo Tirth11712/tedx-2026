@@ -13,6 +13,7 @@ const googleFormUrl =
 const ticketCode = "TXSV·2026·PASS";
 const eventDate = "October 10, 2026";
 const venue = "Architecture Auditorium, SVIT Campus, Vasad";
+const ticketPrice = "399";
 
 export default function TicketFormPage() {
   const [showModal, setShowModal] = useState(false);
@@ -49,6 +50,10 @@ export default function TicketFormPage() {
               <div className="ticket-row">
                 <span className="t-k">Venue</span>
                 <span className="t-v">{venue}</span>
+              </div>
+              <div className="ticket-row">
+                <span className="t-k">Price</span>
+                <span className="t-v">₹{ticketPrice}</span>
               </div>
             </div>
 
@@ -109,6 +114,10 @@ export default function TicketFormPage() {
                 <div className="gf-pass-row">
                   <span>Venue:</span>
                   <b>{venue}</b>
+                </div>
+                <div className="gf-pass-row">
+                  <span>Price:</span>
+                  <b>₹{ticketPrice}</b>
                 </div>
                 <div className="gf-pass-code">{ticketCode}</div>
               </div>
