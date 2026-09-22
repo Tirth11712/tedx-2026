@@ -60,6 +60,7 @@ export const departments: Department[] = [
       member("logistics", "tithi", "Tithi", "Logistics"),
       member("logistics", "keshvee", "Keshvee", "Logistics"),
       member("logistics", "krish-panchal", "Krish Panchal", "Logistics"),
+      member("logistics", "mishit-shah", "Mishit Shah", "Logistics"),
     ],
   },
   {
