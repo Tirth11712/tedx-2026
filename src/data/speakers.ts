@@ -80,15 +80,20 @@ export const speakers: Speaker[] = [
   },
   {
     id: "2026-05",
-    name: "Revealing Soon",
-    role: "Speaker",
-    tag: "Coming Soon",
-    talk: "Revealing Soon",
-    img: "/speakers/placeholder.svg",
-    desc: "Details for this TEDxSVIT 2026 speaker are being finalized and will be revealed soon.",
+    name: "Hunny Bhagchandani",
+    role: "Founder, Torchit",
+    tag: "Social Entrepreneurship | Assistive Technology",
+    talk: "From Engineering Student to Social Entrepreneur",
+    img: "/speakers/current/hunny-bhagchandani.webp",
+    desc: "From an engineering student to a social entrepreneur, Hunny Bhagchandani founded Torchit to build affordable assistive technology for people with disabilities. His journey began during an internship with the Blind People’s Association, where witnessing the everyday challenges faced by visually impaired people pushed him to turn a real-world problem into an innovation. His work has earned him a place on the Forbes India 30 Under 30 list as well as the Forbes Asia 30 Under 30, while his journey has also taken him to Shark Tank India. He has been recognised by the MIT Media Lab and the Royal Academy of Engineering, UK, and has received a National Award from the President of India. Through Torchit, he has developed solutions such as Saarthi and Jyoti AI, combining technology, entrepreneurship and social impact to make independence more accessible.",
     meta: [
-      { label: "Edition", val: "TEDxSVIT 2026" },
-      { label: "Bio", val: "Full Details Coming Soon" },
+      { label: "Business", val: "Founder, Torchit" },
+      { label: "Journey", val: "From Engineering Student to Forbes 30 Under 30 Social Entrepreneur" },
+      {
+        label: "Recognition",
+        val: "Forbes 30 Under 30 • Shark Tank India • MIT Media Lab • Royal Academy of Engineering • National Award",
+      },
+      { label: "Expertise", val: "Social Entrepreneurship • Assistive Technology • AI • Innovation • Inclusive Design" },
     ],
   },
   {
