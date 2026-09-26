@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEDxSVIT 2026 Ticket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #171717;
+    --bone: #efeae0;
+    --paper: #e7e1d2;
+    --red: #e62b1f;
+    --red-deep: #b3180e;
+    --line-ink: rgba(23, 23, 23, 0.22);
+    --ease: cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 14px;
+    background: var(--ink);
+    color: var(--bone);
+    font-family: "Host Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .ticket-card {
+    position: relative;
+    background: var(--paper);
+    color: var(--ink);
+    padding: clamp(26px, 3.2vw, 42px);
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(23, 23, 23, 0.15);
+    transition: transform 0.4s var(--ease);
+  }
+  .ticket-card:hover { transform: translateY(-4px); }
+
+  .ticket-header-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6E6759;
+  }
+  .ticket-header-line b { color: var(--red-deep); font-weight: 800; margin-right: 4px; }
+
+  .ticket-theme-title {
+    margin-top: 18px;
+    font-size: clamp(38px, 12vw, 76px);
+    font-weight: 800;
+    line-height: 0.92;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .ticket-rows { margin-top: 24px; border-top: 2px solid var(--ink); }
+
+  .ticket-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 2px;
+    border-bottom: 1px solid var(--line-ink);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .ticket-row .t-k { color: #6E6759; font-weight: 600; flex: none; }
+  .ticket-row .t-v { font-weight: 700; text-align: right; color: var(--ink); word-break: break-word; }
+
+  .ticket-holder-placeholder {
+    color: #7d7567 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+  }
+  .ticket-delivery-note { color: var(--red-deep) !important; font-weight: 700 !important; }
+
+  .ticket-perforation {
+    position: relative;
+    margin: 22px -6px 20px;
+    border-top: 2px dashed #B4AB97;
+  }
+  .ticket-perforation::before,
+  .ticket-perforation::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 24px;
+    height: 24px;
+    background: var(--ink);
+    border-radius: 50%;
+  }
+  .ticket-perforation::before { left: -48px; }
+  .ticket-perforation::after { right: -48px; }
+
+  .ticket-barcode {
+    margin-top: 24px;
+    height: 48px;
+    width: 100%;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--ink) 0 2px, transparent 2px 5px,
+      var(--ink) 5px 6px, transparent 6px 8px,
+      var(--ink) 8px 12px, transparent 12px 14px,
+      var(--ink) 14px 17px, transparent 17px 20px
+    );
+  }
+  .ticket-barcode-code {
+    margin-top: 8px;
+    font-size: 10px;
+    letter-spacing: 0.34em;
+    color: #6E6759;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .ticket-action-btn {
+    width: 100%;
+    margin-top: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 18px 24px;
+    background: var(--red);
+    color: #fff;
+    border: 1px solid var(--red);
+    cursor: pointer;
+    transition: all 0.35s var(--ease);
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 0;
+  }
+  .ticket-action-btn:hover { background: var(--bone); color: var(--red-deep); border-color: var(--ink); }
+
+  @media (max-width: 600px) {
+    .ticket-card { padding: 24px 16px; }
+    .ticket-row { font-size: 11px; padding: 10px 0; gap: 8px; }
+    .ticket-action-btn { padding: 15px 16px; font-size: 12px; }
+    .ticket-perforation { margin-inline: 0; }
+    .ticket-perforation::before { left: -12px; }
+    .ticket-perforation::after { right: -12px; }
+  }
+</style>
+</head>
+<body>
+  <div class="ticket-card" id="ticketPreview">
+    <div class="ticket-header-line">
+      <span><b>✕</b> TEDxSVIT</span>
+      <span>2026</span>
+    </div>
+
+    <h1 class="ticket-theme-title">The Ripple Effect</h1>
+
+    <div class="ticket-rows">
+      <div class="ticket-row"><span class="t-k">Date</span><span class="t-v">TBA</span></div>
+      <div class="ticket-row"><span class="t-k">Doors</span><span class="t-v">08:00 IST</span></div>
+      <div class="ticket-row"><span class="t-k">Venue</span><span class="t-v">Architecture Auditorium, SVIT Campus, Vasad</span></div>
+    </div>
+
+    <div class="ticket-perforation" aria-hidden="true"></div>
+
+    <div class="ticket-row">
+      <span class="t-k">Pass Holder</span>
+      <span class="t-v ticket-holder-placeholder">[ YOUR NAME HERE ]</span>
+    </div>
+    <div class="ticket-row">
+      <span class="t-k">Delivery</span>
+      <span class="t-v ticket-delivery-note">Emailed After Payment</span>
+    </div>
+
+    <div class="ticket-barcode" aria-hidden="true"></div>
+    <div class="ticket-barcode-code">TXSV·2026·PASS</div>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_PLACEHOLDER_GOOGLE_FORM/viewform" target="_blank" rel="noopener noreferrer" class="ticket-action-btn">
+      <span>Register Now</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</body>
+</html>
