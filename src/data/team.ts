@@ -42,7 +42,7 @@ export const departments: Department[] = [
     members: [
       member("website", "jwalin-patel", "Jwalin Patel", "Website"),
       member("website", "tirth", "Tirth Rana", "Website"),
-      member("website", "param", "Param", "Website"),
+      member("website", "param-patel", "Param Patel", "Website"),
     ],
   },
   {
