@@ -99,6 +99,32 @@
   color: var(--ink);
 }
 
+/* Sold out state */
+
+.ticket-card--sold-out {
+  text-align: center;
+}
+
+.sold-out-badge {
+  margin-top: 32px;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--red-deep);
+}
+
+.sold-out-note {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6e6759;
+}
+
+.ticket-card--sold-out .ticket-action-btn {
+  margin-top: 28px;
+}
+
 /* Ticket rows table */
 
 .ticket-rows {

@@ -1,10 +1,14 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import Link from "next/link";
 import Footer from "@/components/layout/Footer";
 import PageBackdrop from "@/components/ui/PageBackdrop";
 import { useEscapeKey, useScrollLock } from "@/hooks/overlay";
 import "@/styles/tickets.css";
+
+// Flip this to reopen ticket sales; no other change needed.
+const TICKETS_SOLD_OUT = true;
 
 const googleFormUrl =
   process.env.NEXT_PUBLIC_GOOGLE_FORM_URL ||
@@ -15,12 +19,54 @@ const eventDate = "October 10, 2026";
 const venue = "Architecture Auditorium, SVIT Campus, Vasad";
 const ticketPrice = "399";
 
+function SoldOutCard() {
+  return (
+    <div className="ticket-card ticket-card--sold-out">
+      <div className="ticket-header-line">
+        <span>
+          <b>✕</b> TEDxSVIT
+        </span>
+        <span>2026</span>
+      </div>
+
+      <h1 className="ticket-theme-title">The Ripple Effect</h1>
+
+      <p className="sold-out-badge">We Are Sold Out</p>
+      <p className="sold-out-note">
+        Thank you for the overwhelming response — every seat for TEDxSVIT 2026 has been claimed. Follow us for
+        updates on future editions.
+      </p>
+
+      <Link href="/" className="ticket-action-btn">
+        <span>Back to Home</span>
+        <span aria-hidden="true">→</span>
+      </Link>
+    </div>
+  );
+}
+
 export default function TicketFormPage() {
   const [showModal, setShowModal] = useState(false);
   const closeModal = useCallback(() => setShowModal(false), []);
 
   useScrollLock(showModal);
   useEscapeKey(showModal, closeModal);
+
+  if (TICKETS_SOLD_OUT) {
+    return (
+      <div className="tickets-page-root">
+        <PageBackdrop />
+
+        <main className="wrap">
+          <div className="ticket-wrapper">
+            <SoldOutCard />
+          </div>
+        </main>
+
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="tickets-page-root">
