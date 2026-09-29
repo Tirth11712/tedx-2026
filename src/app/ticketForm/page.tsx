@@ -31,7 +31,7 @@ function SoldOutCard() {
 
       <h1 className="ticket-theme-title">The Ripple Effect</h1>
 
-      <p className="sold-out-badge">We Are Sold Out</p>
+      <p className="sold-out-badge">Sold Out</p>
       <p className="sold-out-note">
         Thank you for the overwhelming response — every seat for TEDxSVIT 2026 has been claimed. Follow us for
         updates on future editions.
