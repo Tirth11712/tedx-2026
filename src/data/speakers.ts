@@ -17,6 +17,27 @@ export interface Speaker {
 export const speakers: Speaker[] = [
   {
     id: "2026-01",
+    name: "Arun Mahesh Babu M.S., IAS",
+    role: "Municipal Commissioner, Vadodara Municipal Corporation",
+    tag: "Urban Governance | Public Administration",
+    talk: "Building a Digitally Enabled, Sustainable Vadodara",
+    img: "/speakers/current/arun-mahesh-babu.webp",
+    desc: "Arun Mahesh Babu M.S., IAS, is the Municipal Commissioner of Vadodara, leading the city's transformation into a digitally enabled, sustainable, climate-resilient, and citizen-centric urban center — from modern water and drainage systems to the restoration of the Vishwamitri River and the city's Clean Air and Heat Action Plans. Before Vadodara, he served as Managing Director of the Gujarat Power Corporation, where he led the 37.35 GW Khavda Hybrid Renewable Energy Park and contributed to Gujarat's Green Hydrogen Policy. His career has also spanned Uttar Gujarat Vij Company, Smart City Rajkot, and district administration, consistently pairing technology with governance to build infrastructure that lasts.",
+    meta: [
+      { label: "Position", val: "Municipal Commissioner, Vadodara Municipal Corporation" },
+      {
+        label: "Key Initiatives",
+        val: "Vishwamitri River Restoration • Clean Air & Heat Action Plans • Solar City Development • Digital Governance",
+      },
+      {
+        label: "Previous Roles",
+        val: "MD, Gujarat Power Corporation • MD, Uttar Gujarat Vij Company • CEO, Smart City Rajkot",
+      },
+      { label: "Recognition", val: "Chaired Urban Innovation & Infrastructure Summit 2025 • Best DDO (Urban) 2018–19" },
+    ],
+  },
+  {
+    id: "2026-02",
     name: "Tushar Sanghavi",
     role: "Chairman, Silkflex India Limited",
     tag: "Business | Entrepreneurship",
@@ -31,7 +52,7 @@ export const speakers: Speaker[] = [
     ],
   },
   {
-    id: "2026-02",
+    id: "2026-03",
     name: "Urmi Mehta",
     role: "Author, Therapist & Counsellor",
     tag: "Wellness | Author & Therapist",
@@ -46,7 +67,7 @@ export const speakers: Speaker[] = [
     ],
   },
   {
-    id: "2026-03",
+    id: "2026-04",
     name: "Shahbaj Mansuri",
     role: "Strength & Conditioning Coach",
     tag: "Sports | Strength & Conditioning",
@@ -60,7 +81,7 @@ export const speakers: Speaker[] = [
     ],
   },
   {
-    id: "2026-04",
+    id: "2026-05",
     name: "Kabir Brahmbhatt",
     role: "Engineering Student & PR Leader",
     tag: "Student Leadership | Communications",
@@ -78,35 +99,22 @@ export const speakers: Speaker[] = [
       },
     ],
   },
-  // {
-  //   id: "2026-05",
-  //   name: "Hunny Bhagchandani",
-  //   role: "Founder, Torchit",
-  //   tag: "Social Entrepreneurship | Assistive Technology",
-  //   talk: "From Engineering Student to Social Entrepreneur",
-  //   img: "/speakers/current/hunny-bhagchandani.webp",
-  //   desc: "Hunny Bhagchandani is a social entrepreneur and founder of Torchit, developing affordable assistive technology for people with disabilities. Inspired by his experience with the Blind People’s Association, he turned a real-world challenge into impactful innovations such as Saarthi and Jyoti AI. His work has earned recognition from Forbes India, Forbes Asia, MIT Media Lab, the Royal Academy of Engineering, UK, and the Government of India, along with an appearance on Shark Tank India. His journey reflects the intersection of technology, entrepreneurship, and social impact.",
-  //   meta: [
-  //     { label: "Business", val: "Founder, Torchit" },
-  //     { label: "Journey", val: "From Engineering Student to Forbes 30 Under 30 Social Entrepreneur" },
-  //     {
-  //       label: "Recognition",
-  //       val: "Forbes 30 Under 30 • Shark Tank India • MIT Media Lab • Royal Academy of Engineering • National Award",
-  //     },
-  //     { label: "Expertise", val: "Social Entrepreneurship • Assistive Technology • AI • Innovation • Inclusive Design" },
-  //   ],
-  // },
   {
     id: "2026-06",
-    name: "Revealing Soon",
-    role: "Speaker",
-    tag: "Coming Soon",
-    talk: "Revealing Soon",
-    img: "/speakers/placeholder.svg",
-    desc: "Details for this TEDxSVIT 2026 speaker are being finalized and will be revealed soon.",
+    name: "Hunny Bhagchandani",
+    role: "Founder, Torchit",
+    tag: "Social Entrepreneurship | Assistive Technology",
+    talk: "From Engineering Student to Social Entrepreneur",
+    img: "/speakers/current/hunny-bhagchandani.webp",
+    desc: "Hunny Bhagchandani is a social entrepreneur and founder of Torchit, developing affordable assistive technology for people with disabilities. Inspired by his experience with the Blind People’s Association, he turned a real-world challenge into impactful innovations such as Saarthi and Jyoti AI. His work has earned recognition from Forbes India, Forbes Asia, MIT Media Lab, the Royal Academy of Engineering, UK, and the Government of India, along with an appearance on Shark Tank India. His journey reflects the intersection of technology, entrepreneurship, and social impact.",
     meta: [
-      { label: "Edition", val: "TEDxSVIT 2026" },
-      { label: "Bio", val: "Full Details Coming Soon" },
+      { label: "Business", val: "Founder, Torchit" },
+      { label: "Journey", val: "From Engineering Student to Forbes 30 Under 30 Social Entrepreneur" },
+      {
+        label: "Recognition",
+        val: "Forbes 30 Under 30 • Shark Tank India • MIT Media Lab • Royal Academy of Engineering • National Award",
+      },
+      { label: "Expertise", val: "Social Entrepreneurship • Assistive Technology • AI • Innovation • Inclusive Design" },
     ],
   },
 ];
