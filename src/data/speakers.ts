@@ -99,24 +99,6 @@ export const speakers: Speaker[] = [
       },
     ],
   },
-  {
-    id: "2026-06",
-    name: "Hunny Bhagchandani",
-    role: "Founder, Torchit",
-    tag: "Social Entrepreneurship | Assistive Technology",
-    talk: "From Engineering Student to Social Entrepreneur",
-    img: "/speakers/current/hunny-bhagchandani.webp",
-    desc: "Hunny Bhagchandani is a social entrepreneur and founder of Torchit, developing affordable assistive technology for people with disabilities. Inspired by his experience with the Blind People’s Association, he turned a real-world challenge into impactful innovations such as Saarthi and Jyoti AI. His work has earned recognition from Forbes India, Forbes Asia, MIT Media Lab, the Royal Academy of Engineering, UK, and the Government of India, along with an appearance on Shark Tank India. His journey reflects the intersection of technology, entrepreneurship, and social impact.",
-    meta: [
-      { label: "Business", val: "Founder, Torchit" },
-      { label: "Journey", val: "From Engineering Student to Forbes 30 Under 30 Social Entrepreneur" },
-      {
-        label: "Recognition",
-        val: "Forbes 30 Under 30 • Shark Tank India • MIT Media Lab • Royal Academy of Engineering • National Award",
-      },
-      { label: "Expertise", val: "Social Entrepreneurship • Assistive Technology • AI • Innovation • Inclusive Design" },
-    ],
-  },
 ];
 
 export const pastSpeakers: Speaker[] = [
