@@ -99,6 +99,21 @@ export const speakers: Speaker[] = [
       },
     ],
   },
+  {
+    id: "2026-06",
+    name: "Manas Sharma",
+    role: "Fashion Director & Founder, Runway Academy by Manas",
+    tag: "Fashion & Entertainment | Modeling",
+    talk: "Your Degree Defines Your Education, Not Your Destiny",
+    img: "/speakers/current/manas-sharma.webp",
+    desc: "Manas Sharma is an Aerospace Engineer turned actor, Fashion Director, Show Director, Choreographer, and Entrepreneur. A graduate of Coventry University, UK, he has worked with prestigious platforms including London Fashion Week, Lakmé Fashion Week, FDCI, Khadi India, NIFT, and KVIC. He has also been associated with ITPO and served as Venue Operations Manager for the Indian Super League at Jawaharlal Nehru Stadium, Delhi. He is the founder of Runway Academy by Manas, dedicated to training and empowering aspiring models. His journey reflects the belief that one's degree defines an education, not one's destiny.",
+    meta: [
+      { label: "Business", val: "Founder, Runway Academy by Manas" },
+      { label: "Journey", val: "From Aerospace Engineering to Fashion & Entertainment Leadership" },
+      { label: "Platforms", val: "London Fashion Week • Lakmé Fashion Week • FDCI • NIFT • KVIC" },
+      { label: "Expertise", val: "Fashion Direction • Show Direction • Choreography • Modeling Education" },
+    ],
+  },
 ];
 
 export const pastSpeakers: Speaker[] = [
