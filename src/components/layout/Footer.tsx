@@ -81,7 +81,7 @@ export default function Footer() {
             </div>
             <p className="fc-copy">
               <strong>Sardar Vallabhbhai Patel Institute of Technology</strong>
-              B/h. Vasad Railway Station, NH-48, Vasad, Gujarat 388306
+              B/h. Vasad Bus Station, NH-48, Vasad, Gujarat 388306
             </p>
 
             <div className="fc-social-row">
